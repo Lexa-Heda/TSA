@@ -10,7 +10,7 @@ class Main:
     def __init__(self):
         self.screen = pygame.display.set_mode((1280, 720), pygame.FULLSCREEN)
         self.draw = Draw_handler(self.screen)
-        #self.
+        #
 
     def gameloop(self):
         while True:
