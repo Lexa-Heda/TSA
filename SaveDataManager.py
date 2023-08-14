@@ -22,7 +22,7 @@ class SaveDataManager:
 
 leben = 3
 
-file_Leben = SaveDataManager("saves/leben.asduhbvasjlhdvbfashdnfbm")
+file_Leben = SaveDataManager("saves/leben.sv")
 
 file_Leben.save_data(leben)
 
