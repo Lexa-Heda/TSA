@@ -5,6 +5,7 @@ from draw import *
 from element import *
 
 
+
 class Main():
     def __init__(self):
         self.screen = pygame.display.set_mode((1280, 720), pygame.FULLSCREEN)
@@ -17,7 +18,7 @@ class Main():
                 if event == pygame.QUIT:
                     pygame.quit()
                     sys.exit()
-            self.draw.main
+            self.draw.main()
             self.screen.fill((0, 0, 0))
 
     def run(self):
