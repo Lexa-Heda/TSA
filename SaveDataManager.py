@@ -22,10 +22,12 @@ class SaveDataManager:
 
 leben = 3
 
-file_Leben = SaveDataManager("saves/leben.sv")
+file_Leben = SaveDataManager("saves/Leben.sv")
 
 file_Leben.save_data(leben)
 
 neue_Leben = file_Leben.load_data()
 
 print(str(neue_Leben))
+
+print("Hallo")
