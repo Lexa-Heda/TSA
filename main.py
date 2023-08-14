@@ -29,4 +29,4 @@ if __name__ == "__main__":
     main.run()
 
 
-# Bitte Programmiere noch ein Gubi ins Spiel
+# Bin gerade noch am Handy mache ich in 5min
