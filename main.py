@@ -30,5 +30,4 @@ if __name__ == "__main__":
     main.run()
 
 
-#NEE PE ZE
-# Dies ist vom netbook aus gemacht worden
+# Bitte Programmiere noch ein Gubi ins Spiel
