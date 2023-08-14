@@ -29,5 +29,6 @@ if __name__ == "__main__":
     main = Main()
     main.run()
 
-#Netbook
+
+#NEE PE ZE
 # Dies ist vom netbook aus gemacht worden
