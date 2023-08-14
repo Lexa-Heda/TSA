@@ -29,4 +29,5 @@ if __name__ == "__main__":
     main = Main()
     main.run()
 
+#Netbook
 # Dies ist vom netbook aus gemacht worden
