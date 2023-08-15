@@ -28,5 +28,3 @@ if __name__ == "__main__":
     main = Main()
     main.run()
 
-
-# Bin gerade noch am Handy mache ich in 5min
