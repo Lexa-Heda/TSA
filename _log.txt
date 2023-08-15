@@ -5,6 +5,7 @@ Vorbereitungen und Grundgerüst für das Programm wurden fertiggestellt, sowie E
 ------------------------------
 Übersicht Dienstag 15.08.2023:
 
-Fertiggestellt: Pixelart "campfire", "play_button", "save_button", "exit_button", "goblin"
+Fertiggestellt:
+Nico: Pixelart "campfire", "play_button", "save_button", "exit_button", "goblin"
+Ludwig: "player_character"
 
-Angefangen: Pixelart "player_character"
