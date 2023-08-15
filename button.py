@@ -3,7 +3,7 @@ import pygame.mouse
 import main
 
 
-class button:
+class Button:
     def __init__(self, image, pos, function_name):
         self.pos = pos
         self.image = image
