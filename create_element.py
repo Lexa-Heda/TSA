@@ -1,6 +1,6 @@
 from main import *
 
-class create_test:
+class Create_test:
     def __init__(self):
         pass
 
