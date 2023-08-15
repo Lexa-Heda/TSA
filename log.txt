@@ -1,0 +1,10 @@
+Übersicht Montag 14.08.2023:
+
+Vorbereitungen und Grundgerüst für das Programm wurden fertiggestellt, sowie Einrichtung der Entwicklungsumgebung Pycharm mit der Verknüpfung zu GitHub.
+
+------------------------------
+Übersicht Dienstag 15.08.2023:
+
+Fertiggestellt: Pixelart "campfire", "play_button", "save_button", "exit_button", "goblin"
+
+Angefangen: Pixelart "player_character"
