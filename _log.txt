@@ -7,5 +7,7 @@ Vorbereitungen und Grundgerüst für das Programm wurden fertiggestellt, sowie E
 
 Fertiggestellt:
 Nico: Pixelart "campfire", "play_button", "save_button", "exit_button", "goblin"
-Ludwig: "player_character"
+Ludwig: Pixelart "player_character", "saber"
 
+Weitergearbeitet/Angefangen:
+None
