@@ -1,5 +1,5 @@
 import sys
-
+from saveDataManager import *
 import pygame
 import time
 import threading
@@ -8,13 +8,14 @@ from handler import *
 from element import *
 
 
-# App
+# Application
 class Main:
     def __init__(self):
         self.screen = pygame.display.set_mode((1280, 720))
         self.clock = pygame.time.Clock()
         self.draw = Draw_handler(self.screen)
-
+        self.savemanager = SaveDataManager("saves/save.sv")
+        self.savemanager.save_data([])
         self.GUI_setter = Create_GUI(self.draw)
 
 

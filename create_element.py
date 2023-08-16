@@ -1,6 +1,7 @@
 from main import *
 from handler import *
 import pygame
+from element import *
 
 
 class Create_GUI:
