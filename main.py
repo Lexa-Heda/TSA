@@ -4,11 +4,11 @@ import pygame
 import time
 import threading
 from create_element import *
-from draw import *
+from handler import *
 from element import *
 
 
-
+# App
 class Main:
     def __init__(self):
         self.screen = pygame.display.set_mode((1280, 720))
@@ -28,7 +28,7 @@ class Main:
                     pygame.quit()
                     sys.exit()
             self.screen.fill((0, 0, 0))
-            self.draw.main()
+            self.draw.update()
             pygame.display.update()
             self.clock.tick(60)
 
@@ -37,5 +37,6 @@ class Main:
 
 
 if __name__ == "__main__":
+    # App wird gestartet
     main = Main()
     main.run()
