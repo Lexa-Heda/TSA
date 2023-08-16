@@ -11,7 +11,7 @@ from element import *
 class Main:
     def __init__(self):
         self.screen = pygame.display.set_mode((1280, 720))
-        self.draw = Draw_handler(self.screen)
+        self.draw = Draw_handler(self.screen, [])
 
     def gameloop(self):
         # Game loop
@@ -31,5 +31,3 @@ class Main:
 if __name__ == "__main__":
     main = Main()
     main.run()
-
-print("Alle Nuiggos schind dummsch")

@@ -1,5 +1,5 @@
 from main import *
-
+from create_element import *
 
 class Draw_handler:
     def __init__(self, screen):
@@ -13,6 +13,6 @@ class Draw_handler:
 
         self.draw_character()
 
-    def draw_character(self):  # , pos, frame):
+    def draw_character(self):
         # self.pos = pos
         pass
