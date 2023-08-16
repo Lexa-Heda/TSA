@@ -11,13 +11,12 @@ from element import *
 # Application
 class Main:
     def __init__(self):
-        self.screen = pygame.display.set_mode((1280, 720))
+        self.screen = pygame.display.set_mode((1280, 720), pygame.FULLSCREEN)
         self.clock = pygame.time.Clock()
         self.draw = Draw_handler(self.screen)
         self.savemanager = SaveDataManager("saves/save.sv")
         self.savemanager.save_data([])
         self.GUI_setter = Create_GUI(self.draw)
-
 
     def gameloop(self):
         # Game loop
@@ -38,6 +37,6 @@ class Main:
 
 
 if __name__ == "__main__":
-    # App wird gestartet
+    # Application wird gestartet
     main = Main()
     main.run()

@@ -24,4 +24,3 @@ class Button_handler:
             if button.button_mouseclick(mouse_pos):
                 # alle buttonfunktionen auflisten
                 pass
-

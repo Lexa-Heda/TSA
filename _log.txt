@@ -11,3 +11,9 @@ Ludwig: Pixelart "player_character", "saber"
 
 Weitergearbeitet/Angefangen:
 None
+
+------------------------------
+Übersicht Mittwoch 16.08.2023:
+
+Weiterbearbeitet/Angefangen:
+Nico und Ludwig: Erstellung des eigentlichen Spiels auf Basis des Grundgerüsts
