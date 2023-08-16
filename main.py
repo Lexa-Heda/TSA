@@ -1,6 +1,8 @@
-import pygame, sys
+import pygame
+from sys import exit
 import time
 import threading
+from create_element import *
 from draw import *
 from element import *
 
@@ -8,17 +10,19 @@ from element import *
 
 class Main:
     def __init__(self):
-        self.screen = pygame.display.set_mode((1280, 720), pygame.FULLSCREEN)
+        self.screen = pygame.display.set_mode((1280, 720))
         self.draw = Draw_handler(self.screen)
 
     def gameloop(self):
+        # Game loop
         while True:
+            # Event loop
             for event in pygame.event.get():
                 if event == pygame.QUIT:
                     pygame.quit()
-                    sys.exit()
-            self.draw.main()
+                    exit()
             self.screen.fill((0, 0, 0))
+            self.draw.main()
 
     def run(self):
         self.gameloop()

@@ -1,5 +1,5 @@
 import pickle
-
+from main import *
 
 class SaveDataManager:
     def __init__(self, filename):
