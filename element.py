@@ -15,6 +15,7 @@ class Element:
             self.size = self.image.get_size()
 
 
+        self.pos = pos
         self.rect = self.image.get_rect()
         self.bool_animate = animation
 
