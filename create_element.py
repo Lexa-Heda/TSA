@@ -10,7 +10,7 @@ class Create_GUI:
         self.btn_handler = buttonhandler
 
     def create_base_menu(self):
-        if not True:
+        if True:
             character_image = pygame.image.load("graphics/png/buttons/start_button.png")
             self.handler.to_draw.append(Element(character_image, (100, 99)))
             self.btn_handler.buttons.append(Button(character_image, (100, 100), "pygame.quit()"))
