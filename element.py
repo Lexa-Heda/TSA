@@ -14,9 +14,7 @@ class Element:
             self.image = pygame.image.load(self.image_path + "0.png")
             self.size = self.image.get_size()
 
-
-        self.pos = pos
-        self.rect = self.image.get_rect()
+        self.rect = self.image.get_rect(topleft=pos)
         self.bool_animate = animation
 
         if self.bool_animate:

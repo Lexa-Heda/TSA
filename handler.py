@@ -26,7 +26,7 @@ class Draw_handler:
         # alle sachen zeichnen
         for element in self.to_draw:
             element.image = pygame.transform.scale(element.image, (element.rect[0] * 4, element.rect[1] * 4))
-            self.screen.blit(element.image, element.pos)
+            self.screen.blit(element.image, (element.rect[0], element.rect[1]))
 
 
 class Button_handler:

@@ -5,13 +5,13 @@ import main
 
 class Button:
     def __init__(self, image, pos, command_code):
-        self.pos = pos
         self.code = command_code
         self.image_path = image
         self.image = pygame.image.load(image)
         self.image_size = self.image.get_size()
         self.image = pygame.transform.scale(self.image, (self.image_size[0] * 4, self.image_size[1] * 4))
-        self.rect = self.image.get_rect()
+        self.rect = self.image.get_rect(topleft=pos)
+
 
     def button_mouseover(self):
         # für farbänderung
