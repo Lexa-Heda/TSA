@@ -11,8 +11,8 @@ class Create_GUI:
 
     def create_base_menu(self):
         if True:
-            character_image = pygame.image.load("graphics/png/buttons/start_button.png")
-            self.handler.to_draw.append(Element(character_image, (100, 99)))
-            self.btn_handler.buttons.append(Button(character_image, (100, 100), "pygame.quit()"))
+            image_path = "graphics/png/buttons/start_button.png"
+            self.handler.to_draw.append(Element(image_path, (100, 99)))
+            self.btn_handler.buttons.append(Button(image_path, (100, 100), "pygame.quit()"))
         if True:
             self.handler.to_draw.append(Element("graphics/png/objekts/campfire/", (200, 200), True))
