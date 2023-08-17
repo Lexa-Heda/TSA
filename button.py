@@ -28,4 +28,3 @@ class Button:
 
     def run_command(self):
         exec(self.code)
-
