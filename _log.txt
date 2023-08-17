@@ -26,7 +26,8 @@ Animationsbilder für das Lagerfeuer fertiggestellt
 ------------------------------
 
 Übersicht Donnerstag 17.08.2023:
-
-Animationsfunktion der Elemente
-Timerklasse
-2 Bugs behoben
+Nico:
+    Animationsfunktion der Elemente
+    Timerklasse
+    2 Bugs behoben
+    Gelernt: Ausführbare Strings
