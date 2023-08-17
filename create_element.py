@@ -13,6 +13,6 @@ class Create_GUI:
         if True:
             image_path = "graphics/png/buttons/start_button.png"
             self.handler.to_draw.append(Element(image_path, (100, 99), scale=8))
-            self.btn_handler.buttons.append(Button(image_path, (100, 100), "pygame.quit()"))
+            self.btn_handler.buttons.append(Button(image_path, (100, 100), "pygame.quit()", scale=8))
         if True:
             self.handler.to_draw.append(Element("graphics/png/objekts/campfire/", (200, 200), True, scale=6))
