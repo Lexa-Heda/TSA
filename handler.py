@@ -25,7 +25,6 @@ class Draw_handler:
     def update(self):
         # alle sachen zeichnen
         for element in self.to_draw:
-            element.image = pygame.transform.scale(element.image, (element.rect[0], element.rect[1]))
             self.screen.blit(element.image, (element.rect[0], element.rect[1]))
 
 
