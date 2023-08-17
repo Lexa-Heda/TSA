@@ -6,7 +6,8 @@ class Element:
     # Container für daten
     def __init__(self, image_path, pos, animation=False):
         self.image_path = image_path
-        self.image = pygame.image.load(self.image_path + "0.png")
+        if not animation:
+            self.image = pygame.image.load(self.image_path + "0.png")
         self.size = self.image.get_size()
         self.pos = pos
         self.bool_animate = animation
