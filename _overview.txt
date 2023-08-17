@@ -1,0 +1,31 @@
+Klassen werden immer am Anfang großgeschrieben, Objekte klein.
+Dateien werden immer mit der Dateiendung geschrieben.
+Kommentare bzw. genauere Beschreibungen oder Erklärungen beginnen immer mit einem '#'.
+(Attribute werden wie folgt geschrieben: self.<Attrubutname>)
+
+Es werden in dieser Übersicht nicht alle Attribute aufgelisttet, sondern nur solche,
+die eigene Objekte in anderen Klassen sind.
+
+--------------------------------------------------------------------------------------
+Übersicht der Objekte und Klassen
+
+Main
+    main
+        self.draw = Draw_handler()
+            # enthält den screen und eine Liste mit allen Objekten, die auf dem
+            # Bildschirm angezeigt werden sollen, bestehend aus jeweils dem Bild
+            # und der Position
+
+        self.savemanager = SaveDataManager()
+            # enthält den Dateipfad des Speicherorts
+
+        self.GUI_setter = Create_GUI()
+            # enthält self.draw
+
+
+--------------------------------------------------------------------------------------
+Other Stuff
+
+Buttons sind normalerweise 16px hoch(Y-Axe) und werden von der Größe her ver 12-Facht, damit sind
+sie 192px hoch.
+

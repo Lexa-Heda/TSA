@@ -7,19 +7,21 @@ from create_element import *
 from handler import *
 from element import *
 
+# NICO!
+# mach bitte _overview.txt weiter!
+# dank u
 
 
 # Application
 class Main:
     def __init__(self):
-        self.screen = pygame.display.set_mode((1280, 720))
+        self.screen = pygame.display.set_mode((1280, 720), pygame.FULLSCREEN)
         self.clock = pygame.time.Clock()
         self.draw = Draw_handler(self.screen)
         self.btn_handler = Button_handler(self.screen)
         self.savemanager = SaveDataManager("saves/save.sv")
         self.savemanager.save_data([])
         self.GUI_setter = Create_GUI(self.draw, self.btn_handler)
-
 
     def gameloop(self):
         # Game loop
@@ -41,6 +43,6 @@ class Main:
 
 
 if __name__ == "__main__":
-    # App wird gestartet
+    # Application wird gestartet
     main = Main()
     main.run()
