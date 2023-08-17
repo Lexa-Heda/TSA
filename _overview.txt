@@ -6,26 +6,29 @@ Kommentare bzw. genauere Beschreibungen oder Erklärungen beginnen immer mit ein
 Es werden in dieser Übersicht nicht alle Attribute aufgelisttet, sondern nur solche,
 die eigene Objekte in anderen Klassen sind.
 
+Buttons sind normalerweise 16px hoch(Y-Axe) und werden von der Größe her ver 12-Facht, damit sind
+sie 192px hoch.
+
 --------------------------------------------------------------------------------------
 Übersicht der Objekte und Klassen
 
 Main
     main
         self.draw = Draw_handler()
-            # enthält den screen und eine Liste mit allen Objekten, die auf dem
-            # Bildschirm angezeigt werden sollen, bestehend aus jeweils dem Bild
-            # und der Position
+            - enthält den screen und eine Liste mit allen Objekten, die auf dem
+            - Bildschirm angezeigt werden sollen, bestehend aus jeweils dem Bild
+            - und der Position
+
+        self.btn_handler = Buttonhandler()
+            - enthält eine liste wo alle buttons geprüft werden ob sie gehovert oder gedrückt werden
 
         self.savemanager = SaveDataManager()
-            # enthält den Dateipfad des Speicherorts
+            - enthält den Dateipfad des Speicherorts
 
         self.GUI_setter = Create_GUI()
-            # enthält self.draw
+            - enthält self.draw
 
 
 --------------------------------------------------------------------------------------
-Other Stuff
-
-Buttons sind normalerweise 16px hoch(Y-Axe) und werden von der Größe her ver 12-Facht, damit sind
-sie 192px hoch.
+Ausführung von Main
 
