@@ -20,7 +20,7 @@ class Timer:
 class Draw_handler:
     def __init__(self, screen):
         self.screen = screen
-        self.new_cursor = pygame.image.load("graphics/png/objekts/schwert_cursor1.png")
+        self.new_cursor = pygame.image.load("graphics/png/GUTER_cursor.png")
         self.to_draw = []
 
     def update(self):
