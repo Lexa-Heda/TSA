@@ -7,10 +7,6 @@ from create_element import *
 from handler import *
 from element import *
 
-# NICO!
-# mach bitte _overview.txt weiter!
-# dank u
-
 
 # Application
 class Main:

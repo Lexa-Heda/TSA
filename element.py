@@ -9,7 +9,7 @@ class Element:
         if not animation:
             self.image = pygame.image.load(self.image_path)
             self.size = self.image.get_size()
-            self.image = pygame.transform.scale(self.image, (self.size[0] * 4, self.size[1] * 4))
+            self.image = pygame.transform.scale(self.image, (self.size[0] * scale, self.size[1] * scale))
         else:
             self.image = pygame.image.load(self.image_path + "0.png")
             self.size = self.image.get_size()
