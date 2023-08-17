@@ -1,5 +1,6 @@
 Übersicht Montag 14.08.2023:
 
+Projekt wurde ausgedacht
 Vorbereitungen und Grundgerüst für das Programm wurden fertiggestellt, sowie Einrichtung der Entwicklungsumgebung Pycharm mit der Verknüpfung zu GitHub.
 
 ------------------------------
@@ -10,7 +11,6 @@ Nico: Pixelart "campfire", "play_button", "save_button", "exit_button", "goblin"
 Ludwig: Pixelart "player_character", "saber"
 
 Weitergearbeitet/Angefangen:
-None
 
 ------------------------------
 Übersicht Mittwoch 16.08.2023:
@@ -31,3 +31,11 @@ Nico:
     Timer Klasse
     2 Bugs behoben
     Gelernt: Ausführbare Strings
+
+Beide: Custom Cursor
+       Unterhaltung / Besprechungen
+
+Ludwig: Hauptmenü angefangen (Code)
+
+
+------------------------------
