@@ -6,12 +6,12 @@ from button import *
 
 class Timer:
     def __init__(self, start_time, duration):
-        self.strt_time = start_time
+        self.start_time = start_time
         self.lenght = duration
 
     def update(self):
         self.current_time = pygame.time.get_ticks()
-        self.elapsed_time = self.current_time - self.strt_time
+        self.elapsed_time = self.current_time - self.start_time
         if self.elapsed_time >= self.lenght:
             return True
 
