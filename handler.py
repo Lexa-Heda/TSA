@@ -20,13 +20,16 @@ class Timer:
 class Draw_handler:
     def __init__(self, screen):
         self.screen = screen
+        self.new_cursor = pygame.image.load("graphics/png/objekts/schwert_cursor1.png")
         self.to_draw = []
 
     def update(self):
         # alle sachen zeichnen
+
         for element in self.to_draw:
             self.screen.blit(element.image, (element.rect[0], element.rect[1]))
-
+        mouse_pos = pygame.mouse.get_pos()
+        self.screen.blit(self.new_cursor, mouse_pos)
 
 class Button_handler:
     def __init__(self, screen):
