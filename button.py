@@ -1,6 +1,5 @@
 import pygame.mouse
-
-import main
+from main import *
 
 
 class Button:
@@ -15,15 +14,15 @@ class Button:
 
 
     def button_mouseover(self):
-        # für farbänderung
+        # für die Farbänderung
         mouse = pygame.mouse.get_pos()
-        if self.image_size[0] <= mouse[0] <= self.image_size[0] + self.image_size[0] and self.image_size[1] <= mouse[1] <= self.image_size[1] + self.image_size[1]:
+        if self.rect.collidepoint(mouse_pos):
             return True
 
     def button_mouseclick(self, maus):
         if pygame.mouse.get_pressed()[0]:
-            mouse = maus
-            if self.image_size[0] <= mouse[0] <= self.image_size[0] + self.image_size[0] and self.image_size[1] <= mouse[1] <= self.image_size[1] + self.image_size[1]:
+            mouse_pos = pygame.mouse.get_pos()
+            if self.rect.collidepoint(mouse_pos):
                 return True
 
     def run_command(self):

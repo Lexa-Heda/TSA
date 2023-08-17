@@ -31,8 +31,15 @@ class Main:
                     pygame.quit()
                     sys.exit()
             self.screen.fill((0, 0, 0))
+
+            # Blittet alle Sachen in der Liste self.to_draw in der Klasse
+            # Draw_handler in der Datei handler.py
             self.draw.update()
+
+            # Führt die Commands der Buttons aus, wenn sie gedrückt wurden
             self.btn_handler.update()
+
+            # Schlangen(Python) Zeugs
             pygame.display.update()
             self.clock.tick(60)
 

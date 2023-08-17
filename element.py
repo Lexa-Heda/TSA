@@ -4,20 +4,43 @@ import pygame
 
 class Element:
     # Container für daten
-    def __init__(self, image_path, pos, animation=False, scale=1):
+    def __init__(self, image_path, pos, animation=False, scale=1, rect_point="topleft"):
         self.image_path = image_path
         if not animation:
             self.image = pygame.image.load(self.image_path)
             self.size = self.image.get_size()
-            self.image = pygame.transform.scale(self.image, (self.size[0] * scale, self.size[1] * scale))
+            self.image = pygame.transform.scale_by(self.image, scale)
         else:
             self.image = pygame.image.load(self.image_path + "0.png")
             self.size = self.image.get_size()
-            self.image = pygame.transform.scale(self.image, (self.size[0] * scale, self.size[1] * scale))
+            self.image = pygame.transform.scale_by(self.image, scale)
 
-        self.rect = self.image.get_rect(topleft=pos)
         self.bool_animate = animation
 
+        # Ja dass mussso kompliziert für rect points!
+        # Auch wenn wir die meisten eh nie brauchen werden...
+        if rect_point == "topleft":
+            self.rect = self.image.get_rect(topleft=pos)
+        elif rect_pint == "center":
+            self.rect = self.image.get_rect(center=pos)
+        elif rect_point == "midleft":
+            self.rect = self.image.get_rect(midleft=pos)
+        elif rect_point == "bottomleft":
+            self.rect = self.image.get_rect(bottomleft=pos)
+        elif rect_point == "midbottom":
+            self.rect = self.image.get_rect(midbottom=pos)
+        elif rect_point == "bottomright":
+            self.rect = self.image.get_rect(bottomright=pos)
+        elif rect_point == "midright":
+            self.rect = self.image.get_rect(midright=pos)
+        elif rect_point == "topright":
+            self.rect = self.image.get_rect(topleft=pos)
+        elif rect_point == "midtop":
+            self.rect = self.image.get_rect(midtop=pos)
+
+        # Ab jetzt ist wida normaler Code
+        # Schau mal ob ich nicht ausversehen bool_animate kaputt gemacht habe
+        # also das oben Zeile 17 ca.
         if self.bool_animate:
             self.frame_timer = Timer(pygame.time.get_ticks(), 60)
             self.frame = 0
