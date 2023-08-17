@@ -3,9 +3,9 @@ from main import *
 
 class Element:
     # Container für daten
-    def __init__(self, image, pos):
+    def __init__(self, image, image_rect):
         self.image = image
-        self.pos = pos
+        self.rect = image_rect
 
     def update(self):
         pass

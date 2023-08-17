@@ -12,7 +12,7 @@ class Draw_handler:
     def update(self):
         # alle sachen zeichnen
         for element in self.to_draw:
-            self.screen.blit(element.image, element.pos)
+            self.screen.blit(element.image, element.rect)
 
 class Button_handler:
     def __init__(self, screen):
@@ -22,5 +22,5 @@ class Button_handler:
         mouse_pos = pygame.mouse.get_pos()
         for button in self.buttons:
             if button.button_mouseclick(mouse_pos):
-                # alle buttonfunktionen auflisten
+                # alle button Funktionen auflisten
                 pass

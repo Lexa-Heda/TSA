@@ -7,6 +7,8 @@ Es werden in dieser Übersicht nicht alle Attribute aufgelisttet, sondern nur so
 die eigene Objekte in anderen Klassen sind.
 
 --------------------------------------------------------------------------------------
+Übersicht der Objekte und Klassen
+
 Main
     main
         self.draw = Draw_handler()
@@ -19,4 +21,11 @@ Main
 
         self.GUI_setter = Create_GUI()
             # enthält self.draw
+
+
+--------------------------------------------------------------------------------------
+Other Stuff
+
+Buttons sind normalerweise 16px hoch(Y-Axe) und werden von der Größe her ver 12-Facht, damit sind
+sie 192px hoch.
 

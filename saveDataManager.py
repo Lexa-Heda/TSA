@@ -17,17 +17,3 @@ class SaveDataManager:
         except FileNotFoundError:
             return None
 
-
-# Beispielcode:
-
-leben = 3
-
-file_Leben = SaveDataManager("saves/Leben.sv")
-
-file_Leben.save_data(leben)
-
-neue_Leben = file_Leben.load_data()
-
-print(str(neue_Leben))
-
-print("Hallo")
