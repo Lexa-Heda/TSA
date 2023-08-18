@@ -19,7 +19,6 @@ class Element:
                 self.image = pygame.transform.scale_by(self.image, scale)
         else:
             self.image = image_path
-            self.rect = self.image.get_rect()
         self.bool_animate = animation
 
         # Ja dass mussso kompliziert für rect points!
