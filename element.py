@@ -22,6 +22,7 @@ class Element:
         # Ja dass mussso kompliziert für rect points!
         # Auch wenn wir die meisten eh nie brauchen werden...
         # Nico: Total unnötig!!!...
+        # Ludwig: Mir doch egal du Niggosaurus!!
         if rect_point == "topleft":
             self.rect = self.image.get_rect(topleft=pos)
         elif rect_point == "center":

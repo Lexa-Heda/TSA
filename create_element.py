@@ -22,5 +22,6 @@ class Create_GUI:
             image_path = "graphics/png/buttons/exit_button.png"
             self.handler.to_draw.append(Element(image_path, (500, 500), scale=8))
             self.btn_handler.buttons.append(Button(image_path, "sys.exit()", self.btn_handler, scale=8))
-
+        if True:
+            self.handler.to_draw.append(Element("graphics/png/backgrounds/main_menu_background.png", (0, 0), scale=80))
 
