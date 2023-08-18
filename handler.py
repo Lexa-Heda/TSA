@@ -27,14 +27,18 @@ class Draw_handler:
         # alle sachen zeichnen
 
         for element in self.to_draw:
+            element.update()
             self.screen.blit(element.image, (element.rect[0], element.rect[1]))
         mouse_pos = pygame.mouse.get_pos()
         self.screen.blit(self.new_cursor, mouse_pos)
 
+
 # Führt den Befehl eines Buttons aus, wenn dieser gedrückt wurde
-# die Commands für die Buttons werden in create_element.py in der Klasse
-    def __init__(self, screen):
+# die Commands für die Buttons werden in create_element.py in der Klasse als string definiert
+class Button_handler:
+    def __init__(self, screen, draw_handler):
         self.screen = screen
+        self.draw_handler = draw_handler
         self.buttons = []
 
     def update(self):
@@ -43,3 +47,6 @@ class Draw_handler:
             if button.button_mouseclick(mouse_pos):
                 button.run_command()
 
+    def clear_screen(self):
+        self.buttons = []
+        self.draw_handler.to_draw = []

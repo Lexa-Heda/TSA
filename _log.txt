@@ -23,19 +23,24 @@ Nico und Ludwig: Erstellung des eigentlichen Spiels auf Basis des Grundgerüsts
 
 Nico:
     Animationsbilder für das Lagerfeuer fertiggestellt
-------------------------------
-
-Übersicht Donnerstag 17.08.2023:
-Nico:
-    Animationsfunktion der Elemente
-    Timer Klasse
+    Animationsfunktion der Elemente angefangen
+    Timer Klasse erstellt
     2 Bugs behoben
     Gelernt: Ausführbare Strings
 
-Beide: Custom Cursor
-       Unterhaltung / Besprechungen
+Beide:
+    Custom Cursor
+    Unterhaltung / Besprechungen
 
-Ludwig: Hauptmenü angefangen (Code)
-
+Ludwig:
+    Hauptmenü angefangen (Code)
+    scaling der Bilder verbessert
 
 ------------------------------
+Übersicht Donnerstag 18.08.2023:
+
+Nico:
+    Fehler bei den Animationen behoben
+    clear_screen Methode in Button_handler()
+
+

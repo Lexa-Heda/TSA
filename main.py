@@ -13,17 +13,16 @@ class Main:
     def __init__(self):
         self.screen = pygame.display.set_mode((1280, 720), pygame.FULLSCREEN)
         self.clock = pygame.time.Clock()
-
         self.draw = Draw_handler(self.screen)
-        self.btn_handler = Button_handler(self.screen)
+        self.btn_handler = Button_handler(self.screen, self.draw)
+        self.GUI_setter = Create_GUI(self.draw, self.btn_handler)
         self.savemanager = SaveDataManager("saves/save.sv")
         self.savemanager.save_data([])
-        self.GUI_setter = Create_GUI(self.draw, self.btn_handler)
 
     def gameloop(self):
         # Game loop
         pygame.mouse.set_visible(False)
-        self.GUI_setter.create_base_menu()
+        self.GUI_setter.create_main_menu()
         while True:
 
             for event in pygame.event.get():
@@ -42,6 +41,7 @@ class Main:
             # Schlangen(Python) Zeugs
             pygame.display.update()
             self.clock.tick(60)
+
 
     def run(self):
         self.gameloop()
