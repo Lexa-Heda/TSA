@@ -12,6 +12,8 @@ class Create_GUI:
     def create_main_menu(self):
         # Jedes "if True:"ist die Abgrenzung eines grafischen Elementes
         if True:
+            self.handler.to_draw.append(Element("graphics/png/backgrounds/main_menu_background.png", (0, 0), scale=80))
+        if True:
             image_path = "graphics/png/buttons/start_button.png"
             self.handler.to_draw.append(Element(image_path, (100, 99), scale=8))
             self.btn_handler.buttons.append(Button(image_path, (100, 99), "self.btn_handler.clear_screen()", self.btn_handler, scale=8))
@@ -21,7 +23,5 @@ class Create_GUI:
         if True:
             image_path = "graphics/png/buttons/exit_button.png"
             self.handler.to_draw.append(Element(image_path, (500, 500), scale=8))
-            self.btn_handler.buttons.append(Button(image_path, (100, 99), "sys.exit()", self.btn_handler, scale=8))
-        if True:
-            self.handler.to_draw.append(Element("graphics/png/backgrounds/main_menu_background.png", (0, 0), scale=80))
+            self.btn_handler.buttons.append(Button(image_path, (500, 500), "sys.exit()", self.btn_handler, scale=8))
 
