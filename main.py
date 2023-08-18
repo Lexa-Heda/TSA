@@ -6,6 +6,7 @@ import threading
 from create_element import *
 from handler import *
 from element import *
+from fight_system import *
 
 
 # Application

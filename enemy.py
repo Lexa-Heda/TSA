@@ -7,4 +7,4 @@ class Enemy:
         self.current_health = leben
         self.name = name
         self.level = level
-
+enemys = [Enemy(10, 1, "Goblin")]

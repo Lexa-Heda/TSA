@@ -4,19 +4,22 @@ import pygame
 
 class Element:
     # Container für daten
-    def __init__(self, image_path, pos, animation=False, scale=1, rect_point="topleft"):
-        self.image_path = image_path
-        self.scale = scale
-        self.frame = 0
-        if not animation:
-            self.image = pygame.image.load(self.image_path)
-            self.size = self.image.get_size()
-            self.image = pygame.transform.scale_by(self.image, scale)
+    def __init__(self, image_path, pos, animation=False, scale=1, rect_point="topleft", type="non_text"):
+        if not type == "text":
+            self.image_path = image_path
+            self.scale = scale
+            self.frame = 0
+            if not animation:
+                self.image = pygame.image.load(self.image_path)
+                self.size = self.image.get_size()
+                self.image = pygame.transform.scale_by(self.image, scale)
+            else:
+                self.image = pygame.image.load(self.image_path + str(self.frame) + ".png")
+                self.size = self.image.get_size()
+                self.image = pygame.transform.scale_by(self.image, scale)
         else:
-            self.image = pygame.image.load(self.image_path + str(self.frame) + ".png")
-            self.size = self.image.get_size()
-            self.image = pygame.transform.scale_by(self.image, scale)
-
+            self.image = image_path
+            self.rect = self.image.get_rect()
         self.bool_animate = animation
 
         # Ja dass mussso kompliziert für rect points!
