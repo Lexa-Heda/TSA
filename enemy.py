@@ -7,3 +7,4 @@ class Enemy:
         self.current_health = leben
 
         self.level = level
+
