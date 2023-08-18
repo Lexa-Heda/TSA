@@ -22,6 +22,6 @@ class Create_GUI:
             self.handler.to_draw.append(Element("graphics/png/objekts/campfire/", (640, 360), True, scale=6))
         if True:
             image_path = "graphics/png/buttons/exit_button.png"
-            self.handler.to_draw.append(Element(image_path, (500, 500), scale=8))
+            self.handler.to_draw.append(Element(image_path, (500, 500), scale=8, rect_point="midbottom"))
             self.btn_handler.buttons.append(Button(image_path, (500, 500), "sys.exit()", self.btn_handler, scale=8))
 
