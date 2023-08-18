@@ -4,7 +4,7 @@ from main import *
 
 
 class Button:
-    def __init__(self, image, pos, command_code, btn_handler, scale=1):
+    def __init__(self, image, command_code, btn_handler, scale=1):
         self.code = command_code
         self.btn_handler = btn_handler
         self.image_path = image

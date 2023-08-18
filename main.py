@@ -42,10 +42,8 @@ class Main:
             pygame.display.update()
             self.clock.tick(60)
 
-
     def run(self):
         self.gameloop()
-
 
 if __name__ == "__main__":
     # Application wird gestartet
