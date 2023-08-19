@@ -30,7 +30,7 @@ class Main:
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     sys.exit()
-            self.screen.fill((0, 0, 0))
+            self.screen.fill((20, 20, 20))
 
             # Blittet alle Sachen in der Liste self.to_draw in der Klasse
             # Draw_handler in der Datei handler.py

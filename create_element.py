@@ -12,16 +12,24 @@ class Create_GUI:
     def create_main_menu(self):
         # Jedes "if True:"ist die Abgrenzung eines grafischen Elementes
         if True:
-            self.handler.to_draw.append(Element("graphics/png/backgrounds/main_menu_background.png", (0, 0), scale=80))
+            pass
+            # background
+            #self.handler.to_draw.append(Element("graphics/png/backgrounds/main_menu_background.png", (0, 0), scale=80))
         if True:
+            # start button
             image_path = "graphics/png/buttons/start_button.png"
-            self.handler.to_draw.append(Element(image_path, (100, 99), scale=8))
-            self.btn_handler.buttons.append(Button(image_path, (100, 99), "self.btn_handler.clear_screen()", self.btn_handler, scale=8))
+            image_pos = (640, 610)
+            self.handler.to_draw.append(Element(image_path, image_pos, scale=6, rect_point="midbottom"))
+            self.btn_handler.buttons.append(Button(image_path, image_pos, "self.btn_handler.clear_screen()", self.btn_handler, scale=6, rect_point="midbottom"))
         if True:
-            # Stuff um das Lagerfuer mittig zu machen...
-            self.handler.to_draw.append(Element("graphics/png/objekts/campfire/", (640, 360), True, scale=6))
+            # campfire
+            self.handler.to_draw.append(Element("graphics/png/objekts/campfire/", (640, 500), True, scale=6, rect_point="bottomright"))
         if True:
+            # exit button
             image_path = "graphics/png/buttons/exit_button.png"
-            self.handler.to_draw.append(Element(image_path, (500, 500), scale=8, rect_point="midbottom"))
-            self.btn_handler.buttons.append(Button(image_path, (500, 500), "sys.exit()", self.btn_handler, scale=8))
-
+            image_pos = (640, 715)
+            self.handler.to_draw.append(Element(image_path, image_pos, scale=6, rect_point="midbottom"))
+            self.btn_handler.buttons.append(Button(image_path, image_pos, "sys.exit()", self.btn_handler, scale=6, rect_point="midbottom"))
+        if True:
+            # player
+            self.handler.to_draw.append(Element("graphics/png/character/player/stand.png", (640, 500), scale=10, rect_point="bottomleft"))
