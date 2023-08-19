@@ -34,4 +34,6 @@ class Create_GUI:
             # player
             self.handler.to_draw.append(Element("graphics/png/character/player/stand.png", (640, 500), scale=8, rect_point="bottomleft"))
 
+    def create_base(self):
+        # Jedes "if True: "ist die Abgrenzung eines grafischen Elementes
 

@@ -23,9 +23,11 @@ class Fight_System:
 
 
     def fight(self):
-        if self.player.level > self.enemy.level:
+        if self.player.level >= self.enemy.level:
             self.player.level += 1
-            self.winner = "Player"
+            self.winner = "player"
+        else:
+            self.winner = "enemy"
 
 
 

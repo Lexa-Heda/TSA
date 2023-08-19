@@ -31,18 +31,20 @@ class Main:
         pygame.mouse.set_visible(False)
         self.GUI_setter.create_main_menu()
         while True:
-
+            # Event loop
             for event in pygame.event.get():
+                # Wenn wech dann wech
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     sys.exit()
 
-                # wird nur ausgeführt wenn die Maus gerade heruntergedrückt wurde
+                # wird nur ausgeführt wenn eine Maustaste gerade heruntergedrückt wurde
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     # Führt die Commands der Buttons aus, wenn dei linke Maustaste
                     # momentan gedrückt ist
                     self.btn_handler.update()
 
+            # Mache ekliges Grau als Hintergrund
             self.screen.fill((20, 20, 20))
 
             # Blittet alle Sachen in der Liste self.to_draw in der Klasse

@@ -41,6 +41,7 @@ class Button:
             return True
 
     def button_mouseclick(self, maus):
+        # um die Commands auszuführen wenn auf den Button geklickt wird
         if pygame.mouse.get_pressed()[0]:
             mouse_pos = pygame.mouse.get_pos()
             if self.rect.collidepoint(mouse_pos):
