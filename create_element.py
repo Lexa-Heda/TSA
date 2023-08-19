@@ -10,7 +10,7 @@ class Create_GUI:
         self.btn_handler = buttonhandler
 
     def create_main_menu(self):
-        # Jedes "if True:"ist die Abgrenzung eines grafischen Elementes
+        # Jedes "if True: "ist die Abgrenzung eines grafischen Elementes
         if True:
             pass
             # background
