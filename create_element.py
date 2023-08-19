@@ -23,7 +23,7 @@ class Create_GUI:
             self.btn_handler.buttons.append(Button(image_path, image_pos, "self.btn_handler.clear_screen()", self.btn_handler, scale=6, rect_point="midbottom"))
         if True:
             # campfire
-            self.handler.to_draw.append(Element("graphics/png/objekts/campfire/", (640, 500), True, scale=6, rect_point="bottomright"))
+            self.handler.to_draw.append(Element("graphics/png/objekts/campfire/", (640, 500), True, scale=4, rect_point="bottomright"))
         if True:
             # exit button
             image_path = "graphics/png/buttons/exit_button.png"
@@ -32,4 +32,6 @@ class Create_GUI:
             self.btn_handler.buttons.append(Button(image_path, image_pos, "sys.exit()", self.btn_handler, scale=6, rect_point="midbottom"))
         if True:
             # player
-            self.handler.to_draw.append(Element("graphics/png/character/player/stand.png", (640, 500), scale=10, rect_point="bottomleft"))
+            self.handler.to_draw.append(Element("graphics/png/character/player/stand.png", (640, 500), scale=8, rect_point="bottomleft"))
+
+

@@ -12,13 +12,19 @@ from fight_system import *
 # Application
 class Main:
     def __init__(self):
+
+        # erstellt das Fenster mit 1280px * 720px und setzt es auf fullscreen
         self.screen = pygame.display.set_mode((1280, 720), pygame.FULLSCREEN)
+
+        # Uhrenzeuch
         self.clock = pygame.time.Clock()
+
+        #
         self.draw = Draw_handler(self.screen)
         self.btn_handler = Button_handler(self.screen, self.draw)
         self.GUI_setter = Create_GUI(self.draw, self.btn_handler)
-        self.savemanager = SaveDataManager("saves/save.sv")
-        self.savemanager.save_data([])
+        #self.savemanager = SaveDataManager("saves/save.sv")
+        #self.savemanager.save_data([])
 
     def gameloop(self):
         # Game loop
@@ -30,14 +36,18 @@ class Main:
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     sys.exit()
+
+                # wird nur ausgeführt wenn die Maus gerade heruntergedrückt wurde
+                if event.type == pygame.MOUSEBUTTONDOWN:
+                    # Führt die Commands der Buttons aus, wenn dei linke Maustaste
+                    # momentan gedrückt ist
+                    self.btn_handler.update()
+
             self.screen.fill((20, 20, 20))
 
             # Blittet alle Sachen in der Liste self.to_draw in der Klasse
             # Draw_handler in der Datei handler.py
             self.draw.update()
-
-            # Führt die Commands der Buttons aus, wenn sie gedrückt wurden
-            self.btn_handler.update()
 
             # Schlangen(Python) Zeugs
             pygame.display.update()
