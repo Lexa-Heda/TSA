@@ -9,6 +9,25 @@ class Create_GUI:
         self.handler = drawhandler
         self.btn_handler = buttonhandler
 
+        self.screen_state = "self.create_main_menu()"
+        self.screen_state_changed = False
+
+    # Wird nur einmalig pro wechsel eines screens zum nächsten ausgeführt
+    # Soll Draw_handler.to_draw leeren und die Funktion aufrufen, welche die Elemente des jetzigen screens in die to_draw Liste
+    # einfügt
+    def prepare_next_screen(self):
+        # Also wenn sich der Bildschirmstatus (Base, main_menu...) geändert hat...
+        if self.screen_state_changed:
+            # ... dann mache das da auf False, damit das nicht jeden Tick ausgeführt wird
+            self.screen_state_changed = False
+
+            # sowie alles leeren damit nicht auch die alten sachen angezeigt werden
+            self.Draw_handler.to_draw.clear()
+            self.Button_handler.buttons.clear()
+
+            # ...und dann mache den screen state auf den hier gespeicherten (siehe line 11) in diesem script
+            exec(self.screen_state)
+
     def create_main_menu(self):
         # Jedes "if True: "ist die Abgrenzung eines grafischen Elementes
         if True:
@@ -36,4 +55,4 @@ class Create_GUI:
 
     def create_base(self):
         # Jedes "if True: "ist die Abgrenzung eines grafischen Elementes
-
+        pass

@@ -19,18 +19,23 @@ class Main:
         # Uhrenzeuch
         self.clock = pygame.time.Clock()
 
-        #
+        # ja idk
         self.draw = Draw_handler(self.screen)
         self.btn_handler = Button_handler(self.screen, self.draw)
         self.GUI_setter = Create_GUI(self.draw, self.btn_handler)
+
+        # Zum Speichern
         #self.savemanager = SaveDataManager("saves/save.sv")
         #self.savemanager.save_data([])
 
     def gameloop(self):
+
         # Game loop
         pygame.mouse.set_visible(False)
         self.GUI_setter.create_main_menu()
         while True:
+            print(len(self.draw.to_draw))
+
             # Event loop
             for event in pygame.event.get():
                 # Wenn wech dann wech

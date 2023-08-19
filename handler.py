@@ -58,4 +58,4 @@ class Button_handler:
 
     def clear_screen(self):
         self.buttons = []
-        self.draw_handler.to_draw = []
+        self.draw_handler.to_draw.clear()
