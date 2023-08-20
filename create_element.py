@@ -22,8 +22,8 @@ class Create_GUI:
             self.screen_state_changed = False
 
             # sowie alles leeren damit nicht auch die alten sachen angezeigt werden
-            self.Draw_handler.to_draw.clear()
-            self.Button_handler.buttons.clear()
+            self.handler.to_draw.clear()
+            self.btn_handler.buttons.clear()
 
             # ...und dann mache den screen state auf den hier gespeicherten (siehe line 11) in diesem script
             exec(self.screen_state)
