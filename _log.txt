@@ -29,18 +29,23 @@ Nico:
     Gelernt: Ausführbare Strings
 
 Beide:
-    Custom Cursor
-    Unterhaltung / Besprechungen
+    Custom Cursor, Besprechungen
 
 Ludwig:
     Hauptmenü angefangen (Code)
     scaling der Bilder verbessert
 
 ------------------------------
-Übersicht Donnerstag 18.08.2023:
+Übersicht Freitag 18.08.2023:
 
 Nico:
     Fehler bei den Animationen behoben
     clear_screen Methode in Button_handler()
 
+------------------------------
+Übersicht Samstag 19.08.2023:
+
+Ludwig:
+    Texturen geändert, Problem beim Drücken der Buttons behoben (wenn man linksklich gedrückt hält und den Cursor
+    auf einen Button zieht) prepare_next_screen() Methode in Create_GUI, Main menu neu angeordnet
 
