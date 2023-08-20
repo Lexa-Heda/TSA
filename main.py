@@ -25,8 +25,8 @@ class Main:
         self.GUI_setter = Create_GUI(self.draw, self.btn_handler)
 
         # Zum Speichern
-        #self.savemanager = SaveDataManager("saves/save.sv")
-        #self.savemanager.save_data([])
+        # self.savemanager = SaveDataManager("saves/save.sv")
+        # self.savemanager.save_data([])
 
     def gameloop(self):
 
@@ -62,6 +62,7 @@ class Main:
 
     def run(self):
         self.gameloop()
+
 
 if __name__ == "__main__":
     # Application wird gestartet
