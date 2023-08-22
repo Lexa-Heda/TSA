@@ -49,7 +49,7 @@ class Main:
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     # Führt die Commands der Buttons aus, wenn dei linke Maustaste
                     # momentan gedrückt ist
-                    self.btn_handler.update()
+                    self.btn_handler.click_update()
 
             # Mache ekliges Grau als Hintergrund
             self.screen.fill((20, 20, 20))

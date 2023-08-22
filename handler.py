@@ -53,11 +53,15 @@ class Button_handler:
         self.draw_handler = draw_handler
         self.buttons = []
 
-    def update(self):
+    def click_update(self):
         mouse_pos = pygame.mouse.get_pos()
         for button in self.buttons:
             if button.button_mouseclick(mouse_pos):
                 button.run_command()
+
+    def mouseover_update(self):
+        pass
+
 
     def clear_screen(self):
         self.buttons = []
