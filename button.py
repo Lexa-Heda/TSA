@@ -11,8 +11,15 @@ class Button:
         self.gui = gui
         self.image_path_mouseover = image_mouseover
         self.image = pygame.image.load(image)
+
+        self.screen_state = "self.create_main_menu()"
+        self.screen_state_changed = False
+
         self.image_size = self.image.get_size()
         self.image = pygame.transform.scale(self.image, (self.image_size[0] * scale, self.image_size[1] * scale))
+
+        self.draw_handler = drawhandler
+        self.btn_handler = btn_handler
 
         # rect Einstellungen
         if True:
@@ -43,6 +50,19 @@ class Button:
         mouse_pos = pygame.mouse.get_pos()
         if self.rect.collidepoint(mouse_pos):
             return True
+
+    def prepare_next_screen(self):
+        # Also wenn sich der Bildschirmstatus (Base, main_menu...) geändert hat...
+        if self.screen_state_changed:
+            # ... dann mache das da auf False, damit das nicht jeden Tick ausgeführt wird
+            self.screen_state_changed = False
+
+            # sowie alles leeren damit nicht auch die alten sachen angezeigt werden
+            self.draw_handler.to_draw.clear()
+            self.btn_handler.buttons.clear()
+
+            # ...und dann mache den screen state auf den hier gespeicherten (siehe line 11) in diesem script
+            exec(self.screen_state)
 
     def button_mouseclick(self, maus):
         # um die Commands auszuführen wenn auf den Button geklickt wird

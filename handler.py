@@ -23,7 +23,6 @@ class Draw_handler:
         self.new_cursor = pygame.image.load("graphics/png/objekts/schwert_cursor1.png")
         self.to_draw = []
 
-
     # update() zeigt jedes graphische Element an und ruft die Funktion update() in der Klasse
     # Element auf, um das Bild von Objekten, welche animiert sind zu aktualisieren
     def update(self):

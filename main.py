@@ -36,7 +36,7 @@ class Main:
         pygame.mouse.set_visible(False)
         self.GUI_setter.create_main_menu()
         while True:
-
+            self.GUI_setter.prepare_next_screen()
 
             # Event loop
             for event in pygame.event.get():

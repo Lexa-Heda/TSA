@@ -51,4 +51,15 @@ Ludwig:
 
 
 
-WIRE WERRDEN NICHT ANGENOMMEN WEIL WIR NICHTS ERREICH HABEN WVBERRSTANDNE?
+
+
+TODOS:
+
+Erstmal egal WER es ist wichtig DASS es gemacht wird!:
+
+1. Base screen
+
+2. Das Grundgerüst für das eigentliche Spiel wo die Events kommen
+
+3. Die ganzen Events in Elifs packen und sich ausdenken was kommt (maybe 15-20 Events)
+
