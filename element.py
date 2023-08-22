@@ -1,21 +1,20 @@
 from main import *
 import pygame
 
-
 class Element:
     # Container für daten
-    def __init__(self, image_path, pos, animation=False, scale=1, rect_point="topleft", type="non_text"):
-        if not type == "text":
+    def __init__(self, button_handler, image_path, pos, animation=False, scale=1, rect_point="topleft", type="non_text", image_path_mouseover=None):
+        if type != "text":
             self.image_path = image_path
+            self.image_path_mouseover = image_path_mouseover
             self.scale = scale
             self.frame = 0
+            self.button_handler = button_handler
             if not animation:
                 self.image = pygame.image.load(self.image_path)
-                self.size = self.image.get_size()
                 self.image = pygame.transform.scale_by(self.image, scale)
             else:
                 self.image = pygame.image.load(self.image_path + str(self.frame) + ".png")
-                self.size = self.image.get_size()
                 self.image = pygame.transform.scale_by(self.image, scale)
         else:
             self.image = image_path
@@ -61,7 +60,6 @@ class Element:
             self.animate(self.frame)
 
     def animate(self, frame):
-        frame = frame
         self.image = pygame.image.load(self.image_path + "/" + str(frame) + ".png")
         self.image = pygame.transform.scale_by(self.image, self.scale)
 

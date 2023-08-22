@@ -34,6 +34,8 @@ class Main:
         pygame.mouse.set_visible(False)
         self.GUI_setter.create_main_menu()
         while True:
+
+            # Das nur weil ich gucken wollte wieso es bei dir laggt
             print(len(self.draw.to_draw))
 
             # Event loop
