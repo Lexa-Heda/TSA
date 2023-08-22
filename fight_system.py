@@ -12,12 +12,11 @@ class Fight_System:
         self.enemy = current_enemy
         self.player = player
         self.current_font = None
-
+        # Wenn der Text angezeigt werden sollen
         self.text_active = False
 
-        self.textphrase1 = f"Ein/e {current_enemy.name} erscheint und greift dich an!"
-        self.textphrase2 = f"Ihr bekämpft euch..."
-        self.textphrase3 = f"{self.winner} gewinnt!"
+        self.text = ["", f"Ein {current_enemy.name} erscheint und greift dich an!", f"Ihr bekämpft euch...", f"{self.winner} gewinnt!"]
+
         self.current_text = f""
 
     def display_text(self):
@@ -26,13 +25,20 @@ class Fight_System:
 
     def update_text(self):
         if self.text_active:
-            self.current_font
+            frame = 0
+            for key in pygame.key.get_pressed():
+                if key == pygame.K_SPACE:
+                    frame += 1
+                    if frame >= len(self.text):
+                        self.text_active = False
+
 
 
     def fight(self):
         if self.player.level >= self.enemy.level:
-            self.player.level += 1
-            self.winner = "player"
+            print("Player Win")
+            #self.player.level += 1
+            #self.winner = "player"
         else:
             self.winner = "enemy"
 
