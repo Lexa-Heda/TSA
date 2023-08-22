@@ -49,3 +49,6 @@ Ludwig:
     Texturen geändert, Problem beim Drücken der Buttons behoben (wenn man linksklich gedrückt hält und den Cursor
     auf einen Button zieht) prepare_next_screen() Methode in Create_GUI, Main menu neu angeordnet
 
+
+
+WIRE WERRDEN NICHT ANGENOMMEN WEIL WIR NICHTS ERREICH HABEN WVBERRSTANDNE?

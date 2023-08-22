@@ -15,8 +15,13 @@ class Fight_System:
 
         self.text_active = False
 
-        self.textphrase1 = f"Ein/e {current_enemy.name} erscheint und greift dich an!"
-        self.textphrase2 = f"Ihr bekämpft euch..."
+        self.ein_eine = True
+
+        if self.ein_eine:
+            self.textphrase1 = f"Ein {current_enemy.name} erscheint und greift dich an!"
+        else:
+            self.textphrase1 = f"Eine {current_enemy.name} erscheint und greift dich an!"
+        self.textphrase2 = f"Ihr bekämpft euch... die Spannung steigt... die Spannung steigt ins unermessliche..."
         self.textphrase3 = f"{self.winner} gewinnt!"
         self.current_text = f""
 
