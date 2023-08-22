@@ -33,7 +33,7 @@ class Create_GUI:
         if True:
             pass
             # background
-            #self.handler.to_draw.append(Element("graphics/png/backgrounds/main_menu_background.png", (0, 0), scale=80))
+            # self.handler.to_draw.append(Element("graphics/png/backgrounds/main_menu_background.png", (0, 0), scale=80))
         if True:
             # start button
             image_path = "graphics/png/buttons/start_button.png"
