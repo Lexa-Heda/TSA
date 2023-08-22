@@ -70,3 +70,5 @@ if __name__ == "__main__":
     # Application wird gestartet
     main = Main()
     main.run()
+
+    # NICO IST EIN ** ** * ** * * *
