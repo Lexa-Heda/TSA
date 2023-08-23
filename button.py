@@ -4,11 +4,10 @@ from main import *
 
 
 class Button:
-    def __init__(self, image, pos, command_code, btn_handler, scale=1, rect_point="topleft", image_mouseover=None, gui=None):
+    def __init__(self, image, pos, command_code, btn_handler, scale=1, rect_point="topleft", image_mouseover=None):
         self.code = command_code
         self.btn_handler = btn_handler
         self.image_path = image
-        self.gui = gui
         self.image_path_mouseover = image_mouseover
         self.image = pygame.image.load(image)
 

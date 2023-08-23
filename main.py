@@ -1,14 +1,6 @@
-import sys
-from saveDataManager import SaveDataManager
-import pygame
-import time
-import threading
 from create_element import *
 from handler import *
-from element import *
 from fight_system import *
-from enemy import *
-from event import *
 
 
 # Application
