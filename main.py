@@ -25,6 +25,8 @@ class Main:
     def gameloop(self):
 
         # Game loop
+        self.player = Enemy(player_health, player_level, "player")
+
         pygame.mouse.set_visible(False)
         self.GUI_setter.create_main_menu()
         while True:
