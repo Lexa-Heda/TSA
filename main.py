@@ -3,7 +3,7 @@ from enemy import Enemy
 from create_element import *
 from handler import *
 from fight_system import *
-
+from event import *
 
 # Application
 class Main:

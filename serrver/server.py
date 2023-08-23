@@ -41,10 +41,14 @@ def main():
         server_socket.close()
 
 
+    def recive_Data():
+        for client in clients:
+            data = client[0].recv(1024).decode().upper()
+
     def send_saves(client_number):
         for client in clients:
             if client == clients[client]:
-                client[1].send()
+                client[0].send()
 
     def connect():
         global clients

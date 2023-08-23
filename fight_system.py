@@ -3,9 +3,8 @@ from main import *
 
 class Fight_System:
     def __init__(self, draw_handler, current_enemy, player):
+        self.winner = None
         pygame.font.init()
-
-        self.enemys = [Enemy(10, 1, "Goblin")]
 
         self.draw_handler = draw_handler
         self.font = pygame.font.Font("graphics/font.ttf", 36)
