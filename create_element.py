@@ -29,13 +29,21 @@ class Create_GUI:
             exec(self.screen_state)
 
 
-    def choose_Event(self):
+    def choose_Event(self, true=True):
         zahl = random.randint(1, 50)
-        if zahl == 1:
-            return "goblin"
-        else:
-            self.choose_Event()
+        event_type = None
 
+        if true:
+            if zahl == 1:
+                event_type = "fight"
+
+        else:
+            zahl = random.randint(1, 50)
+            if zahl == 1:
+                return "goblin"
+            else:
+                self.choose_Event()
+        return event_type
 
 
 
