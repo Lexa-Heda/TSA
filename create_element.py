@@ -2,7 +2,7 @@ from main import *
 from handler import *
 import pygame, sys
 from element import *
-
+import random
 
 class Create_GUI:
     def __init__(self, drawhandler, buttonhandler):
@@ -27,6 +27,17 @@ class Create_GUI:
 
             # ...und dann mache den screen state auf den hier gespeicherten (siehe line 11) in diesem script
             exec(self.screen_state)
+
+
+    def choose_Event(self):
+        zahl = random.randint(1, 50)
+        if zahl == 1:
+            return "goblin"
+        else:
+            self.choose_Event()
+
+
+
 
     def create_main_menu(self):
         # Jedes "if True: "ist die Abgrenzung eines grafischen Elementes
