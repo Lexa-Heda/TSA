@@ -18,7 +18,7 @@ class Button:
         self.image_size = self.image.get_size()
         self.image = pygame.transform.scale(self.image, (self.image_size[0] * scale, self.image_size[1] * scale))
 
-        self.draw_handler = drawhandler
+        #self.draw_handler = drawhandler
         self.btn_handler = btn_handler
 
         # rect Einstellungen
