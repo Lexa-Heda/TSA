@@ -1,9 +1,14 @@
 import socket
+import threading
+
+clients = []
+Accounts = []
 
 def main():
-
-    host = '127.0.0.1'
+    global clients, Accounts
+    host = 'localhost'
     port = 12345
+
 
     # Socket erstellen
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -34,6 +39,19 @@ def main():
     finally:
         client_socket.close()
         server_socket.close()
+
+
+    def send_saves(client_number):
+        for client in clients:
+            if client == clients[client]:
+                client[1].send()
+
+    def connect():
+        global clients
+        client_socket, client_address = server_socket.accept()
+        client_data = (client_socket, client_address)
+
+        clients.append(client_data)
 
 if __name__ == "__main__":
     main()

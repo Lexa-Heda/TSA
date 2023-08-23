@@ -2,8 +2,8 @@ import socket
 
 def main():
 
-    host = '127.0.0.1'  # IP-Adresse des Servers
-    port = 12345        # Port-Nummer des Servers
+    host = 'localhost'
+    port = 12345
 
 
     client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
