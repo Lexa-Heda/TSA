@@ -75,3 +75,4 @@ class Create_GUI:
     def create_base(self):
         # Jedes "if True: "ist die Abgrenzung eines grafischen Elementes
         self.event = Event("fight", self.handler)
+        self.event.activate()
