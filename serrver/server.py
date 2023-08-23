@@ -1,5 +1,6 @@
 import socket
 import threading
+from saveDataManager import SaveDataManager
 
 clients = []
 Accounts = []
@@ -8,7 +9,7 @@ def main():
     global clients, Accounts
     host = 'localhost'
     port = 12345
-
+    save_manager = SaveDataManager()
 
     # Socket erstellen
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -22,25 +23,6 @@ def main():
     print(f"Server lauscht auf {host}:{port}")
 
 
-    client_socket, client_address = server_socket.accept()
-    print(f"Verbindung hergestellt von {client_address}")
-
-    try:
-
-        data = client_socket.recv(1024).decode().upper()
-        print(f"Empfangene Daten: {data}")
-
-
-        client_socket.send(data.encode())
-
-    except Exception as e:
-        print(f"Fehler aufgetreten: {e}")
-
-    finally:
-        client_socket.close()
-        server_socket.close()
-
-
     def recive_Data():
         for client in clients:
             data = client[0].recv(1024).decode().upper()
@@ -48,7 +30,11 @@ def main():
     def send_saves(client_number):
         for client in clients:
             if client == clients[client]:
+                data = save_manager.load_data("saves/" + str(client_number) + ".ss")
                 client[0].send()
+
+    def create_account():
+        pass
 
     def connect():
         global clients
@@ -56,6 +42,11 @@ def main():
         client_data = (client_socket, client_address)
 
         clients.append(client_data)
+
+    def close():
+        for client in clients:
+            client[0].close()
+        server_socket.close()
 
 if __name__ == "__main__":
     main()

@@ -2,16 +2,16 @@ import pickle
 
 
 class SaveDataManager:
-    def __init__(self, filename):
-        self.filename = filename
+    def __init__(self):
+        self.var = 1 + 1
 
-    def save_data(self, data):
-        with open(self.filename, 'wb') as file:
+    def save_data(self, data, filename):
+        with open(filename, 'wb') as file:
             pickle.dump(data, file)
 
-    def load_data(self):
+    def load_data(self, filename):
         try:
-            with open(self.filename, 'rb') as file:
+            with open(filename, 'rb') as file:
                 data = pickle.load(file)
                 return data
         except FileNotFoundError:
