@@ -15,10 +15,13 @@ class Main:
         # Uhrenzeuch
         self.clock = pygame.time.Clock()
 
+        # Plaier
+        self.player = Enemy(10, 5, "player")
+
         # ja idk
         self.draw = Draw_handler(self.screen)
         self.btn_handler = Button_handler(self.screen, self.draw)
-        self.GUI_setter = Create_GUI(self.draw, self.btn_handler)
+        self.GUI_setter = Create_GUI(self.draw, self.btn_handler, self.player)
 
         # Zum Speichern
         # self.savemanager = SaveDataManager("saves/save.sv")
@@ -27,7 +30,6 @@ class Main:
     def gameloop(self):
 
         # Game loop
-        self.player = Enemy(10, 5, "player")
 
         pygame.mouse.set_visible(False)
         self.GUI_setter.create_main_menu()

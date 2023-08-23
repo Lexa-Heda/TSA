@@ -5,12 +5,13 @@ from element import *
 import random
 
 class Create_GUI:
-    def __init__(self, drawhandler, buttonhandler):
+    def __init__(self, drawhandler, buttonhandler, player):
         self.handler = drawhandler
         self.btn_handler = buttonhandler
         self.events = []
         self.screen_state = "self.create_main_menu()"
         self.screen_state_changed = False
+        self.player = player
 
     # Wird nur einmalig pro wechsel eines screens zum nächsten ausgeführt
     # Soll Draw_handler.to_draw leeren und die Funktion aufrufen, welche die Elemente des jetzigen screens in die to_draw Liste
@@ -74,5 +75,5 @@ class Create_GUI:
 
     def create_base(self):
         # Jedes "if True: "ist die Abgrenzung eines grafischen Elementes
-        self.event = Event("fight", self.handler)
+        self.event = Event("fight", self.handler, player)
         self.event.activate()
