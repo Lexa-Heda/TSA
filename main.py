@@ -1,3 +1,5 @@
+import pygame
+from enemy import Enemy
 from create_element import *
 from handler import *
 from fight_system import *
@@ -25,7 +27,7 @@ class Main:
     def gameloop(self):
 
         # Game loop
-        self.player = Enemy(player_health, player_level, "player")
+        self.player = Enemy(10, 5, "player")
 
         pygame.mouse.set_visible(False)
         self.GUI_setter.create_main_menu()
