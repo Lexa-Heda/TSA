@@ -4,11 +4,10 @@ from main import *
 
 
 class Button:
-    def __init__(self, image, pos, command_code, btn_handler, scale=1, rect_point="topleft", image_mouseover=None, gui=None):
+    def __init__(self, image, pos, command_code, btn_handler, scale=1, rect_point="topleft", image_mouseover=None):
         self.code = command_code
         self.btn_handler = btn_handler
         self.image_path = image
-        self.gui = gui
         self.image_path_mouseover = image_mouseover
         self.image = pygame.image.load(image)
 
@@ -18,7 +17,7 @@ class Button:
         self.image_size = self.image.get_size()
         self.image = pygame.transform.scale(self.image, (self.image_size[0] * scale, self.image_size[1] * scale))
 
-        self.draw_handler = drawhandler
+        #self.draw_handler = drawhandler
         self.btn_handler = btn_handler
 
         # rect Einstellungen

@@ -58,7 +58,7 @@ class Create_GUI:
             image_path = "graphics/png/buttons/start_button.png"
             image_pos = (640, 610)
             self.handler.to_draw.append(Element(self.btn_handler, image_path, image_pos, scale=6, rect_point="midbottom"))
-            self.btn_handler.buttons.append(Button(image_path, image_pos, "self.btn_handler.clear_screen()\nself.gui.create_base()", self.btn_handler, gui=self.handler, scale=6, rect_point="midbottom"))
+            self.btn_handler.buttons.append(Button(image_path, image_pos, "self.btn_handler.clear_screen()", self.btn_handler, scale=6, rect_point="midbottom"))
         if True:
             # campfire
             self.handler.to_draw.append(Element(self.btn_handler, "graphics/png/objekts/campfire/", (640, 500), True, scale=4, rect_point="bottomright"))
