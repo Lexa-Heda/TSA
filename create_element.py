@@ -34,10 +34,11 @@ class Create_GUI:
         zahl = random.randint(1, 50)
         event_type = None
 
-        if true:
+        if True:
             if zahl == 1:
                 event_type = "fight"
-
+            #elif:
+            #    pass
         else:
             zahl = random.randint(1, 50)
             if zahl == 1:
@@ -72,6 +73,13 @@ class Create_GUI:
         if True:
             # player
             self.handler.to_draw.append(Element(self.btn_handler, "graphics/png/character/player/stand.png", (640, 500), scale=8, rect_point="bottomleft"))
+        if True:
+            image_path = "graphics/png/buttons/save_button.png"
+            image_pos = (640, 100)
+            self.handler.to_draw.append(
+                Element(self.btn_handler, image_path, image_pos, scale=6, rect_point="midbottom"))
+            self.btn_handler.buttons.append(
+                Button(image_path, image_pos, "print('Created new stuff')", self.btn_handler, scale=6, rect_point="midbottom"))
 
     def create_base(self):
         # Jedes "if True: "ist die Abgrenzung eines grafischen Elementes
