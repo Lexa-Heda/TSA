@@ -37,8 +37,8 @@ class Create_GUI:
         if true:
             if r == 1:
                 event_type = "fight"
-            #elif r:
-            #    pass
+            else:
+                self.choose_Event(True)
         else:
             r = random.randint(1, 50)
             if r == 1:
@@ -83,5 +83,5 @@ class Create_GUI:
 
     def create_base(self):
         # Jedes "if True: "ist die Abgrenzung eines grafischen Elementes
-        self.event = Event(self.choose_Event(), self.handler, self.player)
+        self.event = Event(self.choose_Event(True), self.handler, self.player)
         self.event.activate()
