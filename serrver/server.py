@@ -5,15 +5,14 @@ from saveDataManager import *
 clients = []
 
 Accounts = {
-    "admin":
+    "admin": 0
 }
 
-save_data(Accounts, "saves/accounts.ss")
-
-Accounts = load_data("serrver/saves/accounts.ss")
+account_counter = 0
 
 def recive_Data(client):
     data = client[0].recv(1024).decode()
+    print("Data:" + str(data))
     return data
 
 
@@ -79,6 +78,7 @@ def main():
             elif unit == "save_data":
                 print("send...")
                 data = recive_Data(client)
+
                 save_data(data, "saves/" + str(account_id) + ".ss")
             else:
                 print("Error")
