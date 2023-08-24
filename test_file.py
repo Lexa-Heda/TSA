@@ -1,7 +1,17 @@
+Accounts = {
+    "admin": 0
+}
 
+username = "Admin"
+username = username.lower()
 
-dic = {"nico": [0, 1]}
+try:
+    account_id = Accounts[username]
 
-print(str(dic["nico"][1]))
+except:
+    new_data = {username: len(Accounts)}
+    Accounts.update(new_data)
+    account_id = Accounts[username]
 
-
+print(str(account_id))
+print(Accounts)

@@ -13,9 +13,9 @@ def main():
         client_socket.connect((host, port))
         print(f"Verbunden mit {host}:{port}")
 
-        username = input("")
+        username = input("Username")
 
-        client_socket.send(())
+        client_socket.send(username.encode())
 
 
         data = client_socket.recv(1024).decode()
