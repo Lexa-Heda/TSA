@@ -9,7 +9,7 @@ Accounts = {}
 
 save_data(Accounts, "saves/accounts.ss")
 
-#Accounts = SaveDataManager.load_data("serrver/saves/accounts.ss")
+Accounts = SaveDataManager.load_data("serrver/saves/accounts.ss")
 
 def recive_Data(client):
     data = client[0].recv(1024).decode()

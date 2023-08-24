@@ -34,7 +34,7 @@ class Create_GUI:
         zahl = random.randint(1, 50)
         event_type = None
 
-        if True:
+        if true: # nicht ändern
             if zahl == 1:
                 event_type = "fight"
             #elif:
