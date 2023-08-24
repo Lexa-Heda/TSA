@@ -1,32 +1,34 @@
 import socket
 
-def main():
+def main(save_data):
 
     host = 'localhost'
-    port = 12345
+    port = 1234
 
 
     client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
+    client_socket.connect((host, port))
+    print(f"Verbunden mit {host}:{port}")
+
     try:
 
-        client_socket.connect((host, port))
-        print(f"Verbunden mit {host}:{port}")
 
-        username = input("Username")
+        username = input("Username: ")
+        ivint = input("string: ")
 
-        client_socket.send(username.encode())
+        send_data(username, client_socket)
+        send_data(ivint, client_socket)
 
+        if ivint.lower() == "save_data":
+            send_data(save_data, client_socket)
 
-        data = client_socket.recv(1024).decode()
-        print(f"Antwort vom Server: {data}")
 
     except Exception as e:
         print(f"Fehler aufgetreten: {e}")
 
-    finally:
-
-        client_socket.close()
+def send_data(data, client_socket):
+    client_socket.send(data.encode())
 
 if __name__ == "__main__":
-    main()
+    main([])

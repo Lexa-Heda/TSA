@@ -3,26 +3,25 @@ import threading
 from saveDataManager import SaveDataManager
 
 clients = []
-Accounts = {
-    "admin": 0
 
-}
 
+Accounts = {}
+
+SaveDataManager().save_data(Accounts, "serrver/saves/accounts.ss")
+
+Accounts = SaveDataManager.load_data("serrver/saves/accounts.ss")
 
 def recive_Data(client):
-    data = client[0].recv(1024).decode().upper()
+    data = client[0].recv(1024).decode()
     return data
 
 
 def send_saves(client_number, id):
     for client in clients:
         if client == clients[client_number]:
-            data = save_manager.load_data("saves/" + str(id) + ".ss")
+            data = save_manager.load_data("serrver/saves/" + str(id) + ".ss")
             client[0].send()
 
-
-def create_account():
-    pass
 
 def connect(server_socket):
     global clients
@@ -44,7 +43,7 @@ def close():
 def main():
     global clients, Accounts
     host = 'localhost'
-    port = 12345
+    port = 1234
     save_manager = SaveDataManager()
 
     # Socket erstellen
@@ -70,16 +69,19 @@ def main():
                 new_data = {username: len(Accounts)}
                 Accounts.update(new_data)
                 account_id = Accounts[username]
-                save_manager.save_data()
+                save_manager.save_data([], "serrver/saves/" + str(account_id) + ".ss")
 
             unit = recive_Data(client)
             if unit == "load_data":
                 send_saves(client[1], account_id)
 
             elif unit == "save_data":
+                print("send...")
                 data = recive_Data(client)
-                save_manager.save_data(data, "saves/" + str(account_id) + ".ss")
-
+                save_manager.save_data(data, "serrver/saves/" + str(account_id) + ".ss")
+            else:
+                print("Error")
+                print(unit)
 
 
 
