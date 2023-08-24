@@ -28,7 +28,7 @@ def main(save_data):
         print(f"Fehler aufgetreten: {e}")
 
 def send_data(data, client_socket):
-    client_socket.send(data.encode())
+    client_socket.send(data())
 
 if __name__ == "__main__":
     main([])
