@@ -31,17 +31,17 @@ class Create_GUI:
 
 
     def choose_Event(self, true=True):
-        zahl = random.randint(1, 50)
+        r = random.randint(1, 50)
         event_type = None
 
-        if True:
-            if zahl == 1:
+        if true:
+            if r == 1:
                 event_type = "fight"
-            #elif:
+            #elif r:
             #    pass
         else:
-            zahl = random.randint(1, 50)
-            if zahl == 1:
+            r = random.randint(1, 50)
+            if r == 1:
                 return "goblin"
             else:
                 self.choose_Event()
