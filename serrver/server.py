@@ -4,8 +4,9 @@ from saveDataManager import *
 
 clients = []
 
-
-Accounts = {}
+Accounts = {
+    "admin":
+}
 
 save_data(Accounts, "saves/accounts.ss")
 
@@ -66,7 +67,7 @@ def main():
                 account_id = Accounts[username]
 
             except:
-                new_data = {username: len(Accounts)}
+                new_data = {str(username): str(len(Accounts))}
                 Accounts.update(new_data)
                 account_id = Accounts[username]
                 save_data([], "saves/" + str(account_id) + ".ss")
