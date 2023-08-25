@@ -2,12 +2,12 @@ import socket
 import struct
 
 
-def main():
+def main(data):
 
     host = 'localhost'
     port = 1234
 
-    data_to_save = [15, 10, 5]
+    data_to_save = data
 
     client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
@@ -30,6 +30,7 @@ def main():
     elif ivint == "load_data":
         data = client_socket.recv(1024).decode()
         print(data)
+        return data
 
 
 
@@ -38,7 +39,6 @@ def send_data(data, client_socket):
     encoded_data = b""
     if isinstance(data, str):
         client_socket.send(data.encode())
-        print(data.encode())
     elif isinstance(data, int):
         encoded_data += (struct.pack("i", data))
         client_socket.send(encoded_data)

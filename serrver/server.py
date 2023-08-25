@@ -4,20 +4,16 @@ from saveDataManager import *
 
 clients = []
 
-Accounts = {
-    "admin": 0
-}
+Accounts = {}
 
 account_counter = 0
 
 def encoding(data):
     encoded_data = b""
     if isinstance(data, str):
-        client_socket.send(data.encode())
-        print(data.encode())
+        encoded_data = data.encode()
     elif isinstance(data, int):
         encoded_data += (struct.pack("i", data))
-        client_socket.send(encoded_data)
     elif isinstance(data, list):
         for item in data:
             if isinstance(item, str):
