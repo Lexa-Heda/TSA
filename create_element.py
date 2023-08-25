@@ -12,6 +12,7 @@ class Create_GUI:
         self.screen_state = "self.create_main_menu()"
         self.screen_state_changed = False
         self.player = player
+        self.event_type = "hi"
 
     # Wird nur einmalig pro wechsel eines screens zum nächsten ausgeführt
     # Soll Draw_handler.to_draw leeren und die Funktion aufrufen, welche die Elemente des jetzigen screens in die to_draw Liste
@@ -30,21 +31,22 @@ class Create_GUI:
             exec(self.screen_state)
 
 
-    def choose_Event(self, true=True):
-        r = random.randint(1, 50)
-        event_type = None
+    def choose_Event(self, t=True):
 
-        if true:
-            if r == 1:
-                event_type = "fight"
-            elif r == 2:
-                event_type = ""
+
+        r = random.randint(1, 50)
+        if r == 1:
+                print("1")
+                self.event_type = "fight"
         else:
-            if r == 1:
-                return "goblin"
-            else:
                 self.choose_Event()
-        return event_type
+        #else:
+        #    r = random.randint(1, 50)
+        #    if r == 1:
+        #        return "goblin"
+        #    else:
+        #        self.choose_Event()
+        return self.event_type
 
 
 
@@ -82,5 +84,7 @@ class Create_GUI:
 
     def create_base(self):
         # Jedes "if True: "ist die Abgrenzung eines grafischen Elementes
-        self.event = Event(self.choose_Event(), self.handler, self.player)
+        self.data = self.choose_Event()
+        print(self.data)
+        self.event = Event(self.data, self.handler, self.player)
         self.event.activate()
