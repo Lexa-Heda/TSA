@@ -13,4 +13,5 @@ def load_data(filename):
             return data
     except FileNotFoundError:
         return None
+        print("Not found!")
 

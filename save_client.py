@@ -18,14 +18,18 @@ def main():
 
 
     username = input("Username: ")
-    ivint = input("string: ")
-
     send_data(username, client_socket)
+    ivint = input("option: ")
     send_data(ivint, client_socket)
 
     if ivint == "save_data":
         for element in data_to_save:
+            print("send...")
+
             send_data(element, client_socket)
+    elif ivint == "load_data":
+        data = client_socket.recv(1024).decode()
+        print(data)
 
 
 

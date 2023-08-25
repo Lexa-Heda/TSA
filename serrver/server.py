@@ -10,17 +10,30 @@ Accounts = {
 
 account_counter = 0
 
+def encoding(data):
+    encoded_data = b""
+    if isinstance(data, str):
+        client_socket.send(data.encode())
+        print(data.encode())
+    elif isinstance(data, int):
+        encoded_data += (struct.pack("i", data))
+        client_socket.send(encoded_data)
+    elif isinstance(data, list):
+        for item in data:
+            if isinstance(item, str):
+                encoded_data += (item.encode())
+            elif isinstance(item, int):
+                encoded_data += struct.pack("i", item)
+    return encoded_data
+
 def recive_Data(client):
     data = client[0].recv(1024).decode()
-    print("Data:" + str(data))
     return data
 
 
-def send_saves(client_number, id):
-    for client in clients:
-        if client == clients[client_number]:
-            data = load_data("saves/" + str(id) + ".ss")
-            client[0].send()
+def send_saves(account_id, client):
+    datas = load_data("saves/" + str(account_id) + ".ss")
+    client[0].send(encoding(datas))
 
 
 def connect(server_socket):
@@ -63,26 +76,30 @@ def main():
             username = username.lower()
 
             try:
-                account_id = Accounts[username]
+                account_password = Accounts[username]
 
             except:
                 new_data = {str(username): str(len(Accounts))}
                 Accounts.update(new_data)
-                account_id = Accounts[username]
-                save_data([], "saves/" + str(account_id) + ".ss")
+                account_password = Accounts[username]
+                save_data(["new"], "saves/admin.ss")
+                print(f"account_password: {account_password}")
 
-            unit = recive_Data(client)
+            unit = recive_Data(client).lower()
+            print(unit)
             if unit == "load_data":
-                send_saves(client[1], account_id)
+                print(str(client[1]))
+                send_saves(username, client)
 
             elif unit == "save_data":
-                print("send...")
+                print("saving...")
                 data = recive_Data(client)
+                print(f"Data: {data}")
+                save_data(data, "saves/" + str(username) + ".ss")
+            clients.remove(client)
 
-                save_data(data, "saves/" + str(account_id) + ".ss")
-            else:
-                print("Error")
-                print(unit)
+
+
 
 
 
