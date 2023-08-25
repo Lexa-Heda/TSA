@@ -52,4 +52,4 @@ def send_data(data, client_socket):
 
 
 if __name__ == "__main__":
-    main()
+    client(["None"])
