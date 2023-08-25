@@ -37,10 +37,9 @@ class Create_GUI:
         if true:
             if r == 1:
                 event_type = "fight"
-            #elif r:
-            #    pass
+            elif r == 2:
+                event_type = ""
         else:
-            r = random.randint(1, 50)
             if r == 1:
                 return "goblin"
             else:
