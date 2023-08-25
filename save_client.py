@@ -2,7 +2,7 @@ import socket
 import struct
 
 
-def main(data):
+def client(data=None):
 
     host = 'localhost'
     port = 1234
