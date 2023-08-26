@@ -1,6 +1,6 @@
 import pygame
 from main import *
-
+from save_client import *
 
 
 class Button:
@@ -11,6 +11,8 @@ class Button:
         self.image_path_mouseover = image_mouseover
         self.image = pygame.image.load(image)
         self.gui_handler = gui_handler
+
+        self.data_to_store_data = [10]
 
         self.screen_state = "self.create_main_menu()"
         self.screen_state_changed = False
@@ -70,6 +72,9 @@ class Button:
             mouse_pos = pygame.mouse.get_pos()
             if self.rect.collidepoint(mouse_pos):
                 return True
+
+    def save_data(self):
+        client("save_data", self.data_to_store_data)
 
     def run_command(self):
         exec(self.code)

@@ -2,7 +2,7 @@ import socket
 import struct
 
 
-def client(data=None):
+def client(iv, data=None):
 
     host = 'localhost'
     port = 1234
@@ -19,7 +19,7 @@ def client(data=None):
 
     username = input("Username: ")
     send_data(username, client_socket)
-    ivint = input("option: ")
+    ivint = iv
     send_data(ivint, client_socket)
 
     if ivint == "save_data":

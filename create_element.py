@@ -3,6 +3,7 @@ from handler import *
 import pygame, sys
 from element import *
 import random
+from save_client import *
 
 class Create_GUI:
     def __init__(self, drawhandler, buttonhandler, player):
@@ -80,7 +81,7 @@ class Create_GUI:
             self.handler.to_draw.append(
                 Element(self.btn_handler, image_path, image_pos, scale=6, rect_point="midbottom"))
             self.btn_handler.buttons.append(
-                Button(image_path, image_pos, "print('Created new stuff')", self.btn_handler, scale=6, rect_point="midbottom"))
+                Button(image_path, image_pos, "client()", self.btn_handler, scale=6, rect_point="midbottom"))
 
     def create_base(self):
         # Jedes "if True: "ist die Abgrenzung eines grafischen Elementes
