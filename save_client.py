@@ -2,7 +2,7 @@ import socket
 import struct
 
 
-def client(iv, data=None):
+def client(username="admin", iv="load_data", data=None):
 
     host = 'localhost'
     port = 1234
@@ -14,20 +14,16 @@ def client(iv, data=None):
     client_socket.connect((host, port))
     print(f"Verbunden mit {host}:{port}")
 
-
-
-
-    username = input("Username: ")
     send_data(username, client_socket)
-    ivint = iv
-    send_data(ivint, client_socket)
+    print(iv)
+    send_data(iv, client_socket)
 
-    if ivint == "save_data":
+    if iv == "save_data":
         for element in data_to_save:
             print("send...")
 
             send_data(element, client_socket)
-    elif ivint == "load_data":
+    elif iv == "load_data":
         data = client_socket.recv(1024).decode()
         print(data)
         return data
@@ -52,4 +48,4 @@ def send_data(data, client_socket):
 
 
 if __name__ == "__main__":
-    client(["None"])
+    client("save_data", data=["T"])

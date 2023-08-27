@@ -61,7 +61,7 @@ class Create_GUI:
             # start button
             image_path = "graphics/png/buttons/start_button.png"
             image_pos = (640, 610)
-            self.handler.to_draw.append(Element(self.btn_handler, image_path, image_pos, scale=6, rect_point="midbottom"))
+            self.handler.to_draw.append(Element(self.handler, image_path, image_pos, scale=6, rect_point="midbottom"))
             self.btn_handler.buttons.append(Button(image_path, image_pos, "self.btn_handler.clear_screen()\n\nself.gui_handler.create_base()", self.btn_handler, gui_handler=self, scale=6, rect_point="midbottom"))
         if True:
             # campfire
@@ -70,7 +70,7 @@ class Create_GUI:
             # exit button
             image_path = "graphics/png/buttons/exit_button.png"
             image_pos = (640, 715)
-            self.handler.to_draw.append(Element(self.btn_handler, image_path, image_pos, scale=6, rect_point="midbottom"))
+            self.handler.to_draw.append(Element(self.handler, image_path, image_pos, scale=6, rect_point="midbottom"))
             self.btn_handler.buttons.append(Button(image_path, image_pos, "sys.exit()", self.btn_handler, scale=6, rect_point="midbottom"))
         if True:
             # player
@@ -81,7 +81,7 @@ class Create_GUI:
             self.handler.to_draw.append(
                 Element(self.btn_handler, image_path, image_pos, scale=6, rect_point="midbottom"))
             self.btn_handler.buttons.append(
-                Button(image_path, image_pos, "client()", self.btn_handler, scale=6, rect_point="midbottom"))
+                Button(image_path, image_pos, "self.save_data()", self.handler, scale=6, rect_point="midbottom"))
 
     def create_base(self):
         # Jedes "if True: "ist die Abgrenzung eines grafischen Elementes

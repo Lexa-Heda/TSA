@@ -1,16 +1,43 @@
 import pygame
 from main import *
 from save_client import *
+import sys
+
+out = None
+
+class Dialog:
+    def __init__(self, draw_handler):
+        self.draw_handler = draw_handler
+        self.rect = (100, 100)
+
+
+    def update(self):
+        global out
+        for event in pygame.event.get():
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_RETURN:
+                    out = input_text
+                    self.draw_handler.remove(self)
+                elif event.key == pygame.K_BACKSPACE:
+                    input_text = input_text[:-1]
+                else:
+                    input_text += event.unicode
+
+        dialog_surface = self.font.render("Username: " + self.input_username, True, (255, 255, 255))
 
 
 class Button:
-    def __init__(self, image, pos, command_code, btn_handler, gui_handler=None, scale=1, rect_point="topleft", image_mouseover=None):
+    def __init__(self, image, pos, command_code, draw_handler, gui_handler=None, scale=1, rect_point="topleft", image_mouseover=None):
         self.code = command_code
         self.btn_handler = btn_handler
         self.image_path = image
         self.image_path_mouseover = image_mouseover
         self.image = pygame.image.load(image)
         self.gui_handler = gui_handler
+
+        self.font = font.Font(pygame.font.Font)("graphics/font.ttf")
+        self.input_username = ""
+
 
         self.data_to_store_data = [10]
 
@@ -20,8 +47,10 @@ class Button:
         self.image_size = self.image.get_size()
         self.image = pygame.transform.scale(self.image, (self.image_size[0] * scale, self.image_size[1] * scale))
 
+
+
         #self.draw_handler = drawhandler
-        self.btn_handler = btn_handler
+        self.draw_handler = draw_handler
 
         # rect Einstellungen
         if True:
@@ -53,6 +82,7 @@ class Button:
         if self.rect.collidepoint(mouse_pos):
             return True
 
+
     def prepare_next_screen(self):
         # Also wenn sich der Bildschirmstatus (Base, main_menu...) geändert hat...
         if self.screen_state_changed:
@@ -73,8 +103,14 @@ class Button:
             if self.rect.collidepoint(mouse_pos):
                 return True
 
+    def show_dialog(self):
+        self.draw_handler.to_draw.append(Dialog(self.draw_handler))
+
     def save_data(self):
+        self.show_dialog()
+
         client("save_data", self.data_to_store_data)
 
     def run_command(self):
+        global out
         exec(self.code)

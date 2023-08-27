@@ -4,6 +4,7 @@ from create_element import *
 from handler import *
 from fight_system import *
 from event import *
+import font
 
 # Application
 class Main:
