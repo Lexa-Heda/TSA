@@ -29,9 +29,6 @@ class Draw_handler:
         # alle sachen zeichnen
 
         for element in self.to_draw:
-            # das Bild von einem Button wird geändert wenn die maus auf ihm drauf ist
-            if element.image_path_mouseover != None and element.button_handler:
-                element.image_path = element.image_path_mouseover
 
             # aktualisiert das Bild wenn Animation und Timer ausgelaufen
             element.update()

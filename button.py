@@ -3,31 +3,32 @@ from main import *
 from save_client import *
 import sys
 
-out = None
 
 class Dialog:
-    def __init__(self, draw_handler):
+    def __init__(self, draw_handler, font):
+        self.font = font
         self.draw_handler = draw_handler
         self.rect = (100, 100)
-
-
+        self.image = self.font.render("Username: ", True, (255, 255, 255))
+        self.input_text = "Test"
     def update(self):
-        global out
         for event in pygame.event.get():
             if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_RETURN:
-                    out = input_text
-                    self.draw_handler.remove(self)
+                if event.key == pygame.K_ENT:
+                    out = self.input_text
+                    client("save_data", out)
+                    self.draw_handler.to_draw.clear()
                 elif event.key == pygame.K_BACKSPACE:
-                    input_text = input_text[:-1]
+                    self.input_text = self.input_text[:-1]
+                    print("Erase")
                 else:
-                    input_text += event.unicode
-
-        dialog_surface = self.font.render("Username: " + self.input_username, True, (255, 255, 255))
+                    self.input_text.join(event.unicode)
+        self.image = self.font.render("Username " + self.input_text, True, (255, 255, 255))
 
 
 class Button:
-    def __init__(self, image, pos, command_code, draw_handler, gui_handler=None, scale=1, rect_point="topleft", image_mouseover=None):
+    def __init__(self, image, pos, command_code, draw_handler, gui_handler=None, scale=1, rect_point="topleft", image_mouseover=None, btn_handler=None):
+        pygame.font.init()
         self.code = command_code
         self.btn_handler = btn_handler
         self.image_path = image
@@ -35,7 +36,7 @@ class Button:
         self.image = pygame.image.load(image)
         self.gui_handler = gui_handler
 
-        self.font = font.Font(pygame.font.Font)("graphics/font.ttf")
+        self.font = pygame.font.Font("graphics/font.ttf", 36)
         self.input_username = ""
 
 
@@ -48,8 +49,6 @@ class Button:
         self.image = pygame.transform.scale(self.image, (self.image_size[0] * scale, self.image_size[1] * scale))
 
 
-
-        #self.draw_handler = drawhandler
         self.draw_handler = draw_handler
 
         # rect Einstellungen
@@ -104,12 +103,14 @@ class Button:
                 return True
 
     def show_dialog(self):
-        self.draw_handler.to_draw.append(Dialog(self.draw_handler))
+        self.draw_handler.to_draw.append(Dialog(self.draw_handler, self.font))
 
     def save_data(self):
+        self.btn_handler.clear_screen()
         self.show_dialog()
 
-        client("save_data", self.data_to_store_data)
+
+
 
     def run_command(self):
         global out
