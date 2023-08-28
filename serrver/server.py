@@ -43,7 +43,7 @@ def connect(server_socket):
         print(clients)
 
 
-def close():
+def Close():
     for client in clients:
         client[0].close()
     server_socket.close()
@@ -52,7 +52,7 @@ def close():
 def main():
     global clients, Accounts
     host = 'localhost'
-    port = 1234
+    port = 80
 
 
     # Socket erstellen

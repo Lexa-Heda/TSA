@@ -1,4 +1,3 @@
-import pygame
 from main import *
 
 class Fight_System:
