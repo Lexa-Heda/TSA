@@ -1,12 +1,14 @@
 import socket
 import threading
 from saveDataManager import *
+import struct
 
 clients = []
 
 Accounts = {}
 
 account_counter = 0
+
 
 def encoding(data):
     encoded_data = b""
@@ -21,6 +23,7 @@ def encoding(data):
             elif isinstance(item, int):
                 encoded_data += struct.pack("i", item)
     return encoded_data
+
 
 def recive_Data(client):
     data = client[0].recv(1024).decode()
@@ -54,10 +57,8 @@ def main():
     host = 'localhost'
     port = 80
 
-
     # Socket erstellen
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
 
     server_socket.bind((host, port))
 
@@ -93,10 +94,6 @@ def main():
                 print(f"Data: {data}")
                 save_data(data, "saves/" + str(username) + ".ss")
             clients.remove(client)
-
-
-
-
 
 
 if __name__ == "__main__":
