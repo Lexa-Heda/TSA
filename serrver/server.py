@@ -72,10 +72,7 @@ def main():
             username = recive_Data(client)
             username = username.lower()
 
-            try:
-                account_password = Accounts[username]
-
-            except:
+            if True:
                 new_data = {str(username): str(len(Accounts))}
                 Accounts.update(new_data)
                 account_password = Accounts[username]
