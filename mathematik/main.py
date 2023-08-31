@@ -16,6 +16,9 @@ class Main_class():
         # Die wievielte Wurzel
         self.index = 2
 
+        # Intervallgröße
+        self.i
+
         # Die Wurzel
         self.root_number = Decimal("3")
 
@@ -26,16 +29,14 @@ class Main_class():
         print("---------------------------------------------------------------------")
         print("Willkommen zu diesem kleinen Mathe Programm!")
         print("Es ist ganz einfach.")
-        print("Wähle zwischen diesen optionen, indem du die passende Zahl eingibst:")
+        print("Wähle zwischen diesen Optionen, indem du die passende Zahl eingibst:")
         print("\n")
         print("1) Programm Test")
         print("2) WIP")
         print("3) WIP")
-        print()
-        print()
+        print("\n")
+        print("\n")
         self.input = input("")
-
-
 
     def main_funct(self):
         self.start_funct()
@@ -43,14 +44,14 @@ class Main_class():
     def intervall(self):
         if radicant <= 0:
             self.found = True
-        for i in range(self.radicant):
-            if i * i < radicant:
-                self.small_num = i
-            elif i * i > radicant:
-                self.big_num = i
-            elif i * i == radicant:
-                self.found = True
 
+        #for i in range(self.radicant):
+        #    if i * i < radicant:
+        #        self.small_num = i
+        #    elif i * i > self.radicant:
+        #        self.big_num = i
+        #    elif i * i == self.radicant:
+        #        self.found = True
 
     def heron(self):
         pass
