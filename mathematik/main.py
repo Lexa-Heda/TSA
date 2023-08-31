@@ -27,7 +27,7 @@ class Main_class():
         print("Willkommen zu diesem kleinen Mathe Programm!")
         print("Es ist ganz einfach.")
         print("Wähle zwischen diesen optionen, indem du die passende Zahl eingibst:")
-        print()
+        print("\n")
         print("1) Programm Test")
         print("2) WIP")
         print("3) WIP")
@@ -35,13 +35,15 @@ class Main_class():
         print()
         self.input = input("")
 
+
+
     def main_funct(self):
         self.start_funct()
 
     def intervall(self):
         if radicant <= 0:
             self.found = True
-        for i in range self.radicant:
+        for i in range(self.radicant):
             if i * i < radicant:
                 self.small_num = i
             elif i * i > radicant:
