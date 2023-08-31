@@ -16,14 +16,16 @@ class Main_class():
         # Die wievielte Wurzel
         self.index = 2
 
-        # Intervallgröße
-        self.i
-
         # Die Wurzel
         self.root_number = Decimal("3")
 
+        # Intervallgröße
+        self.size = Decimal("1")
+
         self.small_num = 0
         self.big_num = 0
+
+        self.i = 0
 
     def start_funct(self):
         print("---------------------------------------------------------------------")
@@ -39,11 +41,21 @@ class Main_class():
         self.input = input("")
 
     def main_funct(self):
+        if radicant == 0:
+            self.found = True
+        elif radicant < 0:
+            self.radicant_neg = True
+
         self.start_funct()
 
     def intervall(self):
-        if radicant <= 0:
-            self.found = True
+        while True:
+            if self.i < self.radicant:
+                self.small_num = self.i
+                self.i += self.size
+            elif self.i > self.radicant:
+                self.big_num = self.i
+                self.size = self.size / 10
 
         #for i in range(self.radicant):
         #    if i * i < radicant:
