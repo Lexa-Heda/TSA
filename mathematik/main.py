@@ -25,45 +25,41 @@ class Main_class():
         self.small_num = 0
         self.big_num = 0
 
-        self.i = 0
+        self.i = Dezimal("0")
 
     def start_funct(self):
         print("---------------------------------------------------------------------")
         print("Willkommen zu diesem kleinen Mathe Programm!")
         print("Es ist ganz einfach.")
         print("Wähle zwischen diesen Optionen, indem du die passende Zahl eingibst:")
-        print("\n")
+        print("")
         print("1) Programm Test")
         print("2) WIP")
         print("3) WIP")
-        print("\n")
-        print("\n")
-        self.input = input("")
+        print("")
+        self.input = input("Wähle: ")
 
     def main_funct(self):
-        if radicant == 0:
+        if self.radicant == 0:
             self.found = True
-        elif radicant < 0:
+            self.root_number = 0
+        elif self.radicant < 0:
             self.radicant_neg = True
+            self.found = True
 
         self.start_funct()
 
     def intervall(self):
         while True:
-            if self.i < self.radicant:
+            if self.i * self.i < self.radicant:
                 self.small_num = self.i
                 self.i += self.size
-            elif self.i > self.radicant:
+            elif self.i * self.i > self.radicant:
                 self.big_num = self.i
                 self.size = self.size / 10
-
-        #for i in range(self.radicant):
-        #    if i * i < radicant:
-        #        self.small_num = i
-        #    elif i * i > self.radicant:
-        #        self.big_num = i
-        #    elif i * i == self.radicant:
-        #        self.found = True
+            elif self.i * self.i == self.radicant:
+                self.found = True
+                self.root_number = self.i
 
     def heron(self):
         pass
