@@ -17,10 +17,23 @@ class Main_class():
         self.index = 2
 
         # Die Wurzel
-        self.root_number = Decimal("")
+        self.root_number = Decimal("3")
+
+    def start_funct(self):
+        print("---------------------------------------------------------------------")
+        print("Willkommen zu diesem kleinen Mathe Programm!")
+        print("Es ist ganz einfach:")
+        print("Wähle zwischen diesen optionen, indem du die passende Zahl eingibst:")
+        print()
+        print("1) Programm Test")
+        print("2) WIP")
+        print("3) WIP")
+        print()
+        print()
+        self.input = input("")
+
     def main_funct(self):
-
-
+        self.start_funct()
 
     def intervall(self):
         pass
@@ -30,6 +43,8 @@ class Main_class():
 
     def statistic(self):
         pass
+
+
 
 if __name__ == "__main__":
     main = Main_class()
