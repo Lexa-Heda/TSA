@@ -7,9 +7,8 @@ class Main_class():
     def __init__(self):
         self.idontknow = True
     def main_func(self):
-        while True:
-            self.input = input("Gebe eine Zahl ein: ")
-            print(input)
+        self.input = input("Gebe eine Zahl ein: ")
+        print(input)
 
 
 if __name__ == "__main__":
