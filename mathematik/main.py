@@ -6,8 +6,8 @@
 class Main_class():
     def __init__(self):
         self.idontknow = True
-    def main_funct():
-        input = input("Gebe eine Zahl ein: ")
+    def main_func(self):
+        self.input = input("Gebe eine Zahl ein: ")
         print(input)
 
 
