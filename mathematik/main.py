@@ -19,17 +19,16 @@ class Main_class():
         # Die Wurzel
         self.root_number = Decimal("")
     def main_funct(self):
-        self.input = input("Gebe eine Zahl ein: ")
-        print(type(self.root_number))
-        print(self.root_number)
-        print()
-        print(len(str(self.root_number)))
+
 
 
     def intervall(self):
         pass
 
     def heron(self):
+        pass
+
+    def statistic(self):
         pass
 
 if __name__ == "__main__":
