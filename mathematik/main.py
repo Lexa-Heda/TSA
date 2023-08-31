@@ -7,10 +7,11 @@ class Main_class():
     def __init__(self):
         self.idontknow = True
     def main_funct():
-        pass
+        input = input("Gebe eine Zahl ein: ")
+        print(input)
 
 
-if __name__ == __main__:
+if __name__ == "__main__":
     main = Main_class
     main.__init__()
     main.main_funct()
