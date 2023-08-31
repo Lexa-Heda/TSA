@@ -19,10 +19,13 @@ class Main_class():
         # Die Wurzel
         self.root_number = Decimal("3")
 
+        self.small_num = 0
+        self.big_num = 0
+
     def start_funct(self):
         print("---------------------------------------------------------------------")
         print("Willkommen zu diesem kleinen Mathe Programm!")
-        print("Es ist ganz einfach:")
+        print("Es ist ganz einfach.")
         print("Wähle zwischen diesen optionen, indem du die passende Zahl eingibst:")
         print()
         print("1) Programm Test")
@@ -36,14 +39,22 @@ class Main_class():
         self.start_funct()
 
     def intervall(self):
-        pass
+        if radicant <= 0:
+            self.found = True
+        for i in range self.radicant:
+            if i * i < radicant:
+                self.small_num = i
+            elif i * i > radicant:
+                self.big_num = i
+            elif i * i == radicant:
+                self.found = True
+
 
     def heron(self):
         pass
 
     def statistic(self):
         pass
-
 
 
 if __name__ == "__main__":
