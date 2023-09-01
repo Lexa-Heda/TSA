@@ -39,6 +39,7 @@ class Main_class():
         print("3) WIP")
         print("")
         self.input = input("Wähle: ")
+        self.i = Decimal("0")
 
         if self.input == "2":
             self.A = self.radicant
@@ -56,7 +57,7 @@ class Main_class():
             self.found = True
             self.root_number = 0
         elif self.radicant < 0:
-            self.radicant_neg = True
+            self.root_number = None
             self.found = True
 
         self.start_funct()
@@ -87,6 +88,12 @@ class Main_class():
 
     def statistic(self):
         pass
+
+    def found(self):
+        print()
+        print("Programm wurde erfolgreich beendet.")
+        print(f"Deine {self.index}. Wurzel von {self.radicant} ist {self.root_number}")
+
 
 if __name__ == "__main__":
     main = Main_class()
