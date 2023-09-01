@@ -26,7 +26,7 @@ class Main_class():
         self.small_num = 0
         self.big_num = 0
 
-        self.i = Dezimal("0")
+        self.i = Decimal("0")
 
     def start_funct(self):
         print("---------------------------------------------------------------------")
@@ -45,12 +45,12 @@ class Main_class():
             self.A = self.radicant
             self.s_a = 8
             self.s_b = 1
-            self.string_number = ""
             for i in range(15):
                 if i == 0:
                     self.babylonisches(True)
                 else:
                     self.babylonisches()
+                    print(str(self.s_a))
 
     def main_funct(self):
         if self.radicant == 0:
@@ -78,8 +78,8 @@ class Main_class():
     def babylonisches(self, s=False):
         self.s_a = (self.s_a + self.s_b) / 2
         self.s_b = self.A / self.s_a
-        if s == True:
-            self.string_number.join(self.s_a + ",")
+
+
 
 
 
