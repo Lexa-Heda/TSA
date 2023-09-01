@@ -76,9 +76,7 @@ class Main_class():
                 else:
                     self.babylon()
             print(str(self.s_a))
-            self.end_zeit = self.clock.stop_timer()
-            print(f"Process ended Succesfully\nneeded Time: {self.end_zeit}\n\n--------------------------------------------------------------------------")
-            self.main_funct()
+            self.statistic()
     def main_funct(self):
         if self.radicant < 0:
             self.root_number = None
@@ -111,7 +109,10 @@ class Main_class():
 
 
     def statistic(self):
-        pass
+        self.end_zeit = self.clock.stop_timer()
+        print(
+            f"Process ended Succesfully\nneeded Time: {self.end_zeit}\n\n--------------------------------------------------------------------------")
+        self.main_funct()
 
     def found(self):
         if self.found():
