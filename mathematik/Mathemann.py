@@ -1,5 +1,5 @@
 # Autor:      Nico Freitag und Ludwig Schemmert
-# Version:    v0
+# Version:    v1
 # Erstellt:   31.08.2023
 # Bearbeitet: 01.09.2023
 from mpmath import mp
