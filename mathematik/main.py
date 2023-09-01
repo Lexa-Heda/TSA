@@ -25,26 +25,14 @@ class Main_class():
         self.small_num = 0
         self.big_num = 0
 
-        self.i = Dezimal("0")
-
-    def start_funct(self):
-        print("---------------------------------------------------------------------")
-        print("Willkommen zu diesem kleinen Mathe Programm!")
-        print("Es ist ganz einfach.")
-        print("Wähle zwischen diesen Optionen, indem du die passende Zahl eingibst:")
-        print("")
-        print("1) Programm Test")
-        print("2) WIP")
-        print("3) WIP")
-        print("")
-        self.input = input("Wähle: ")
+        self.i = Decimal("0")
 
     def main_funct(self):
         if self.radicant == 0:
             self.found = True
             self.root_number = 0
         elif self.radicant < 0:
-            self.radicant_neg = True
+            self.root_number = None
             self.found = True
 
         self.start_funct()
@@ -61,11 +49,28 @@ class Main_class():
                 self.found = True
                 self.root_number = self.i
 
+    def start_funct(self):
+        print("---------------------------------------------------------------------")
+        print("Willkommen zu diesem kleinen Mathe Programm!")
+        print("Es ist ganz einfach.")
+        print("Wähle zwischen diesen Optionen, indem du die passende Zahl eingibst:")
+        print("")
+        print("1) Programm Test")
+        print("2) WIP")
+        print("3) WIP")
+        print("")
+        self.input = input("Wähle: ")
+
     def heron(self):
         pass
 
     def statistic(self):
         pass
+
+    def found(self):
+        print()
+        print("Programm wurde erfolgreich beendet.")
+        print(f"Deine {self.index}. Wurzel von {self.radicant} ist {self.root_number}")
 
 
 if __name__ == "__main__":
