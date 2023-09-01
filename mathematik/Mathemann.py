@@ -1,23 +1,9 @@
 # Autor:      Nico Freitag und Ludwig Schemmert
 # Version:    v1
 # Erstellt:   31.08.2023
-# Bearbeitet: 01.09.2023
-from mpmath import mp
-import time
+# Bearbeitet: 31.08.2023
 
-class Timer:
-    def __init__(self):
-        self.start_zeit = None
-        self.end_zeit = None
-    def start_timer(self):
-        self.start_zeit = time.time()
-    def stop_timer(self):
-        if self.start_zeit != None:
-            self.end_zeit = time.time() - self.start_zeit
-            self.start_zeit = None
-            return self.end_zeit
-        else:
-            raise ValueError("Der timer wurde nicht gestartet")
+from decimal import Decimal, getcontext
 
 
 class Main_class():
@@ -52,20 +38,19 @@ class Main_class():
         self.input = input("Wähle: ")
         self.i = 0
 
+        try:
+            self.radicant = int(input("Gib die Zahl ein, die du radizieren möchtest: "))
+            self.stellen = int(input("Gebe die anzahl stellen ein die du haben möchtest: ")) + 1
+            mp.dps = int(self.stellen)
+        except:
+            print("Gib eine Zahl ein!")
+            self.main_funct()
 
         if self.input == "1":
             #mach hier dein zeugs hin
             self.intervall()
 
         elif self.input == "2":
-            self.radicant = int(input("Zahl zum Radizieren: "))
-            try:
-                self.stellen = int(input("Gebe die anzahl stellen ein die du haben möchtest: ")) + 1
-                mp.dps = int(self.stellen)
-            except:
-                print("Gib eine Zahl ein!")
-                self.main_funct()
-
             self.clock.start_timer()
             self.A = mp.mpf(self.radicant)
             self.s_a = mp.mpf(8)
@@ -110,8 +95,7 @@ class Main_class():
 
     def statistic(self):
         self.end_zeit = self.clock.stop_timer()
-        print(
-            f"Process ended Succesfully\nneeded Time: {self.end_zeit}\n\n--------------------------------------------------------------------------")
+        print(f"Process ended Succesfully\nneeded Time: {self.end_zeit} sek\n\n--------------------------------------------------------------------------")
         self.main_funct()
 
     def found(self):
