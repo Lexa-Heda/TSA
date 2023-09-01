@@ -8,7 +8,7 @@ from decimal import Decimal, getcontext
 
 class Main_class():
     def __init__(self):
-        getcontext().prec = 16
+        getcontext().prec = 32
         self.stellen = 16
 
         # Die Quadratzahl der Wurzel
@@ -18,7 +18,7 @@ class Main_class():
         self.index = 2
 
         # Die Wurzel
-        self.root_number = Decimal("3")
+        self.root_number = Decimal("0")
 
         # Intervallgröße
         self.size = Decimal("1")
@@ -26,7 +26,7 @@ class Main_class():
         self.small_num = 0
         self.big_num = 0
 
-        self.i = Dezimal("0")
+        self.i = Decimal("0")
 
     def start_funct(self):
         print("---------------------------------------------------------------------")
@@ -41,7 +41,16 @@ class Main_class():
         self.input = input("Wähle: ")
         self.i = Decimal("0")
 
-        if self.input == "2":
+        try:
+            self.input = int(self.input)
+            self.input -= 1
+        except:
+            print("Gib bitte eine ZAHL ein!")
+            print()
+            start_funct()
+            return None
+
+        if self.input == 1:
             self.A = self.radicant
             self.s_a = 8
             self.s_b = 1
@@ -53,14 +62,13 @@ class Main_class():
                     self.babylonisches()
 
     def main_funct(self):
-        if self.radicant == 0:
-            self.found = True
-            self.root_number = 0
-        elif self.radicant < 0:
+        if self.radicant < 0:
             self.root_number = None
             self.found = True
 
         self.start_funct()
+
+
 
     def intervall(self):
         while True:
@@ -70,29 +78,28 @@ class Main_class():
             elif self.i * self.i > self.radicant:
                 self.big_num = self.i
                 self.size = self.size / 10
+                self.i = self.small_num
+                break
             elif self.i * self.i == self.radicant:
                 self.found = True
                 self.root_number = self.i
+                break
 
 
-    def babylonisches(self, s=False):
+    def babylon(self, s=False):
         self.s_a = (self.s_a + self.s_b) / 2
         self.s_b = self.A / self.s_a
         if s == True:
             self.string_number.join(self.s_a + ",")
 
-
-
-
-
-
     def statistic(self):
         pass
 
     def found(self):
-        print()
-        print("Programm wurde erfolgreich beendet.")
-        print(f"Deine {self.index}. Wurzel von {self.radicant} ist {self.root_number}")
+        if self.found():
+            print()
+            print("Programm wurde erfolgreich beendet.")
+            print(f"Deine {self.index}. Wurzel von {self.radicant} ist {self.root_number}")
 
 
 if __name__ == "__main__":
