@@ -4,13 +4,13 @@
 # Bearbeitet: 31.08.2023
 
 from decimal import Decimal, getcontext
-
+from mpmath import mp
 
 class Main_class():
     def __init__(self):
-        getcontext().prec = 128
+        #getcontext().prec = 128
         self.stellen = 128
-
+        mp.dps = 100
         # Die Quadratzahl der Wurzel
         self.radicant = 2
 
@@ -51,15 +51,15 @@ class Main_class():
             return None
 
         if self.input == 1:
-            self.A = self.radicant
-            self.s_a = 8
-            self.s_b = 1
+            self.A = mp.mpf(self.radicant)
+            self.s_a = mp.mpf(8)
+            self.s_b = mp.mpf(1)
             for i in range(31):
                 if i == 0:
                     self.babylon(True)
                 else:
                     self.babylon()
-                    print(str(self.s_a))
+            print(str(self.s_a))
 
     def main_funct(self):
         if self.radicant < 0:
@@ -87,8 +87,8 @@ class Main_class():
 
 
     def babylon(self, s=False):
-        self.s_a = (self.s_a + self.s_b) / 2
-        self.s_b = self.A / self.s_a
+        self.s_a = mp.mpf((self.s_a + self.s_b) / 2)
+        self.s_b = mp.mpf(self.A / self.s_a)
 
 
 
