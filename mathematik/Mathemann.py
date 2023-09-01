@@ -6,10 +6,15 @@
 from decimal import Decimal, getcontext
 from mpmath import mp
 import time
+import colorama
+from colorama import Fore
+from colorama import Style
 
 
 class Main_class():
     def __init__(self):
+        colorama.init()
+
         self.stellen = 64
 
         mp.dps = 64
@@ -33,22 +38,27 @@ class Main_class():
         self.root_number_stellen = 0
 
     def start_funct(self):
-        print("Willkommen zu diesem kleinen Mathe Programm!")
-        print("Es ist ganz einfach.")
-        print("Wähle zwischen diesen Optionen, indem du die passende Zahl eingibst:")
-        print("")
-        print("1) Intervall Verfahren")
-        print("2) Babylonisches Verfahren")
-        print("")
-        self.input = input("Wähle: ")
+        print("--------------------------------------------------------------------------\n")
+        print("Welcome to this math homework!")
+        print("It´s simple.")
+        print("Choose one of this options and type the right number:")
+        print()
+        print("1) Interval nesting")
+        print("2) Heron’s Method")
+        print()
+        self.input = input("Choose: ")
         self.i = 0
 
         try:
-            self.radicant = int(input("Gib die Zahl ein, die du radizieren möchtest: "))
-            self.stellen = int(input("Gib die anzahl Nachkommastellen ein die du berechnen möchtest: "))
+            self.radicant = float(input("Enter the number you want to root: "))
+            self.stellen = int(input("Geben Sie die Anzahl an Nachkommastellen ein die Sie berechnen wollen: "))
             mp.dps = int(self.stellen) + 1
         except:
-            print("Gib eine Zahl ein!")
+            print(f"{Fore.RED}Geben Sie eine Zahl ein!{Style.RESET_ALL}")
+            self.main_funct()
+
+        if self.radicant < 0:
+            print(f"{Fore.RED}Aus negativen Zahlen kann man {Fore.YELLOW}KEINE{Fore.RED} Wurzeln ziehen!{Style.RESET_ALL}")
             self.main_funct()
 
         if self.input == "1":
@@ -84,20 +94,20 @@ class Main_class():
 
     def intervall(self):
         while True:
-            if self.i * self.i < self.radicant:
+            if self.i^self.index < self.radicant:
                 self.small_num = self.i
                 self.i += self.size
                 #print("Kleiner")
                 #print(f"I = {self.i}")
                 #print(f"Small num = {self.small_num}")
-            elif self.i * self.i > self.radicant:
+            elif self.i^self.index > self.radicant:
                 self.big_num = self.i
                 self.size = self.size / 10
                 self.i = self.small_num
                 self.root_number_stellen += 1
                 #print("Größer")
                 break
-            elif self.i * self.i == self.radicant:
+            elif self.i^self.index == self.radicant:
                 self.found = True
                 self.root_number = self.i
                 #print("Gleich")
@@ -112,8 +122,8 @@ class Main_class():
         self.end_zeit = "unendlich"
         print()
         print()
-        print(f"Your root number is {self.root_number}")
-        print(f"Process ended succesfully\nNeeded Time: {self.end_zeit} sek\n\n--------------------------------------------------------------------------")
+        print(f"{Fore.GREEN}Your root number is {Fore.LIGHTGREEN_EX}{self.root_number}{Style.RESET_ALL}")
+        print(f"Process ended succesfully\nNeeded Time: {self.end_zeit} sek\n\n")
         self.main_funct()
 
 if __name__ == "__main__":
