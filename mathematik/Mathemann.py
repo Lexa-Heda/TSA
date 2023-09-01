@@ -2,15 +2,12 @@
 # Version:    v0
 # Erstellt:   31.08.2023
 # Bearbeitet: 31.08.2023
-
-from decimal import Decimal, getcontext
 from mpmath import mp
 
 class Main_class():
     def __init__(self):
-        #getcontext().prec = 128
-        self.stellen = 128
-        mp.dps = 100
+        self.stellen = 1000
+        mp.dps = 1000
         # Die Quadratzahl der Wurzel
         self.radicant = 2
 
@@ -18,15 +15,14 @@ class Main_class():
         self.index = 2
 
         # Die Wurzel
-        self.root_number = Decimal("0")
+        self.root_number = 0
 
         # Intervallgröße
-        self.size = Decimal("1")
-
+        self.size = 1
         self.small_num = 0
         self.big_num = 0
 
-        self.i = Decimal("0")
+        self.i = 0
 
     def start_funct(self):
         print("---------------------------------------------------------------------")
@@ -39,7 +35,7 @@ class Main_class():
         print("3) WIP")
         print("")
         self.input = input("Wähle: ")
-        self.i = Decimal("0")
+        self.i = 0
 
         try:
             self.input = int(self.input)
@@ -54,7 +50,7 @@ class Main_class():
             self.A = mp.mpf(self.radicant)
             self.s_a = mp.mpf(8)
             self.s_b = mp.mpf(1)
-            for i in range(31):
+            for i in range(self.stellen):
                 if i == 0:
                     self.babylon(True)
                 else:
