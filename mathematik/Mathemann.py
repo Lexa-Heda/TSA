@@ -47,7 +47,7 @@ class Main_class():
         except:
             print("Gib bitte eine ZAHL ein!")
             print()
-            start_funct()
+            self.start_funct()
             return None
 
         if self.input == 1:
@@ -56,9 +56,9 @@ class Main_class():
             self.s_b = 1
             for i in range(15):
                 if i == 0:
-                    self.babylonisches(True)
+                    self.babylon(True)
                 else:
-                    self.babylonisches()
+                    self.babylon()
                     print(str(self.s_a))
 
     def main_funct(self):
