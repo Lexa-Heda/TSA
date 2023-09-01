@@ -8,8 +8,8 @@ from decimal import Decimal, getcontext
 
 class Main_class():
     def __init__(self):
-        getcontext().prec = 16
-        self.stellen = 16
+        getcontext().prec = 128
+        self.stellen = 128
 
         # Die Quadratzahl der Wurzel
         self.radicant = 2
@@ -45,7 +45,7 @@ class Main_class():
             self.A = self.radicant
             self.s_a = 8
             self.s_b = 1
-            for i in range(15):
+            for i in range(31):
                 if i == 0:
                     self.babylonisches(True)
                 else:

@@ -1,17 +1,13 @@
-Accounts = {
-    "admin": 0
-}
+from decimal import Decimal, getcontext
 
-username = "Admin"
-username = username.lower()
+# Setze die Genauigkeit des decimal-Moduls (Anzahl der Dezimalstellen)
+getcontext().prec = 30  # Zum Beispiel auf 30 Dezimalstellen
 
-try:
-    account_id = Accounts[username]
+# Erstelle Decimal-Objekte
+x = Decimal('3.141592653589793238462643383279')
+y = Decimal('1.414213562373095048801688724209')
 
-except:
-    new_data = {username: len(Accounts)}
-    Accounts.update(new_data)
-    account_id = Accounts[username]
+# Führe Berechnungen mit den Decimal-Objekten durch
+ergebnis = x * y
 
-print(str(account_id))
-print(Accounts)
+print(ergebnis)
