@@ -1,7 +1,7 @@
 # Autor:      Nico Freitag und Ludwig Schemmert
 # Version:    v1
 # Erstellt:   31.08.2023
-# Bearbeitet: 31.08.2023
+# Bearbeitet: 02.09.2023
 
 from decimal import Decimal, getcontext
 from mpmath import mp
