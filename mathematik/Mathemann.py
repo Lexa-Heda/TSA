@@ -1,5 +1,5 @@
 # Autor:      Nico Freitag und Ludwig Schemmert
-# Version:    v1
+# Version:    v1.0
 # Erstellt:   31.08.2023
 # Bearbeitet: 02.09.2023
 
@@ -9,6 +9,19 @@ import time
 import colorama
 from colorama import Fore
 from colorama import Style
+
+
+class Timer:
+    def __init__(self):
+        self.start_time = None
+        self.end_zeit = None
+
+    def start_timer(self):
+        self.start_time = time.time()
+
+    def stop_timer(self):
+        self.end_zeit = time.time() - self.start_time
+        return self.end_zeit
 
 
 class Main_class():
@@ -25,12 +38,14 @@ class Main_class():
         self.index = 2
 
         # Die Wurzel
-        self.root_number = -42
+        self.root_number = 42
 
         # Intervallgröße
         self.size = 1
         self.small_num = 0
         self.big_num = 0
+
+        self.clock = Timer()
 
         self.i = 0
         self.found = False
@@ -67,6 +82,7 @@ class Main_class():
             self.main_funct()
 
         if self.input == "1":
+            self.clock.start_timer()
             for i in range(self.stellen):
                 if self.found:
                     self.statistic()
@@ -74,11 +90,11 @@ class Main_class():
                     #if self.root_number_stellen <= self.stellen:
                     self.intervall()
 
-            self.root_number = self.i
+            self.root_number = mp.mpf(self.i)
             self.statistic()
 
         elif self.input == "2":
-            #self.clock.start_timer()
+            self.clock.start_timer()
             self.A = mp.mpf(self.radicant)
             self.s_a = mp.mpf(8)
             self.s_b = mp.mpf(1)
@@ -100,16 +116,16 @@ class Main_class():
     def intervall(self):
         while True:
             if self.i * self.i < self.radicant:
-                self.small_num = self.i
+                self.small_num = mp.mpf(self.i)
                 self.i += self.size
             elif self.i * self.i > self.radicant:
-                self.big_num = self.i
-                self.size = self.size / 10
-                self.i = self.small_num
+                self.big_num = mp.mpf(self.i)
+                self.size = mp.mpf(self.size / 10)
+                self.i = mp.mpf(self.small_num)
                 break
             elif self.i * self.i == self.radicant:
                 self.found = True
-                self.root_number = self.i
+                self.root_number = mp.mpf(self.i)
                 break
 
     def babylon(self, s=False):
@@ -117,15 +133,14 @@ class Main_class():
         self.s_b = mp.mpf(self.A / self.s_a)
 
     def statistic(self):
-        #self.end_zeit = self.clock.stop_timer()
-        self.end_zeit = "unendlich"
+        self.end_zeit = self.clock.stop_timer()
         print()
         if self.root_number > 0:
-            print(f"{Fore.GREEN}Your root number is {Fore.LIGHTGREEN_EX}{self.root_number}{Fore.GREEN}.{Style.RESET_ALL}")
-            print(f"{Fore.GREEN}Your root number is -{Fore.LIGHTGREEN_EX}{self.root_number}{Fore.GREEN}.{Style.RESET_ALL}")
+            print(f"{Fore.GREEN}Your root number is {Fore.LIGHTGREEN_EX}{self.root_number}{Fore.GREEN}{Style.RESET_ALL}")
+            #print(f"{Fore.GREEN}Your root number is {Fore.LIGHTGREEN_EX}-{self.root_number}{Fore.GREEN}.{Style.RESET_ALL}")
         else:
-            print(f"{Fore.GREEN}Your root number is {Fore.LIGHTGREEN_EX}{self.root_number}{Fore.GREEN}.{Style.RESET_ALL}")
-        print(f"Process ended succesfully\nNeeded Time: {self.end_zeit} sek\n\n")
+            print(f"{Fore.GREEN}Your root number is {Fore.LIGHTGREEN_EX}{self.root_number}{Fore.GREEN}{Style.RESET_ALL}")
+        print(f"Process ended succesfully\nNeeded Time: {self.end_zeit} s\n\n")
         self.main_funct()
 
 if __name__ == "__main__":

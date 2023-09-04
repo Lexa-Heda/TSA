@@ -78,8 +78,7 @@ class Create_GUI:
         if True:
             image_path = "graphics/png/buttons/save_button.png"
             image_pos = (640, 100)
-            self.handler.to_draw.append(
-                Element(self.btn_handler, image_path, image_pos, scale=6, rect_point="midbottom"))
+            self.handler.to_draw.append(Element(self.btn_handler, image_path, image_pos, scale=6, rect_point="midbottom"))
             self.btn_handler.buttons.append(
                 Button(image_path, image_pos, "self.save_data()", self.handler, scale=6, rect_point="midbottom", btn_handler=self.btn_handler))
 
