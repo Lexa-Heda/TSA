@@ -1,13 +1,30 @@
-from mpmath import mp
+import tkinter as tk
+import time
+import random
 
-# Setze die Genauigkeit (Anzahl der Dezimalstellen)
-mp.dps = 50  # Zum Beispiel auf 50 Dezimalstellen
+def start_app():
+    # Diese Funktion wird aufgerufen, wenn der Startbutton gedrückt wird.
+    root.destroy()  # Schließe den Startbildschirm
+    # Hier kannst du deine eigentliche App-Logik einfügen
 
-# Erstelle mpmath-Objekte
-x = mp.mpf('3.141592653589793238462643383279')
-y = mp.mpf('1.414213562373095048801688724209')
+def toggle_label():
+    # Diese Funktion wird verwendet, um den Schriftzug aufflackern zu lassen
+    current_state = label.cget("state")
+    if current_state == "normal":
+        label.config(state="disabled")
+    else:
+        label.config(state="normal")
+    root.after(2000, toggle_label)  # Alle 500 Millisekunden die Funktion erneut aufrufen
 
-# Führe Berechnungen mit den mpmath-Objekten durch
-ergebnis = x * y
+root = tk.Tk()
+root.title("Start Screen")
 
-print(str(ergebnis))
+label = tk.Label(root, text="Press any button to start", font=("Helvetica", 24))
+label.pack(pady=20)
+
+start_button = tk.Button(root, text="Start", command=start_app)
+start_button.pack()
+
+toggle_label()  # Starte das Aufflackern des Schriftzugs
+
+root.mainloop()
