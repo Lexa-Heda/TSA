@@ -46,3 +46,4 @@ class App:
 
 if __name__ == "__main__":
     app = App()
+    print("Du wirst diesen Print-Befehl niemals finden!")
