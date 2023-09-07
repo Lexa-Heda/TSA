@@ -17,16 +17,13 @@ class Main_class():
         self.mode = 0
 
         self.running = True
-
         self.learn_status = {}
-
         self.counter = 1
-
         self.found_number = True
-
         self.last_number = 0
-
         self.number_history = []
+        self.loop = True
+        self.hystory_deepth = 3
 
     def main_funct(self):
         self.start_funct()
@@ -66,17 +63,10 @@ class Main_class():
     def sqaure_guess_funct(self):
         while self.running:
 
-            #while self.last_number == self.number:
-            #    self.number = random.randint(self.exclude_numbers, self.to_number)
+            self.number = random.randint(self.exclude_numbers, self.to_number)
 
-            while True:
-                for i in range(2):
-                    self.number_in_list = i in self.number_history
-                    if not self.number_in_list:
-                        continue
-                    if self.number == self.number_history[i]:
-                        self.number = random.randint(self.exclude_numbers, self.to_number)
-
+            while self.number in self.number_history:
+                self.number = random.randint(self.exclude_numbers, self.to_number)
 
             self.to_guess_number = self.number * self.number
 
@@ -112,6 +102,12 @@ class Main_class():
 
             #self.last_number = self.number
             self.number_history.append(self.number)
+            #print(f"hystory: {self.number_history}")
+            if len(self.number_history) > self.hystory_deepth:
+                #print("Removed element from number history")
+                self.number_history.remove(self.number_history[0])
+            #print(f"neue history: {self.number_history}")
+
 
     def number_guess_funct(self):
         while self.running:
