@@ -17,25 +17,27 @@ import javax.swing.JPanel;
  *
  * @author Nico
  */
-public class Swing implements ActionListener{
+public class Swing extends JFrame implements ActionListener{
     
     private int counts = 0;
-    private JLabel label;
-    private JFrame frame;
+    private static JLabel label;
+    private static JFrame frame;
+    private static JButton button;
+    private static JPanel panel;
+    
     
     
     public static void GUI(){
-        JFrame frame = new JFrame();
+        frame = new JFrame();
         
         
-        JPanel panel = new JPanel();
+        panel = new JPanel();
         
+        button = new JButton("Click me");
+        Swing Listener = new Swing();
+        button.addActionListener(Listener);
         
-        JButton button = new JButton("Click me");
-        
-        button.addActionListener(this);
-        
-        JLabel label = new JLabel("Number on Clicks: 0");
+        label = new JLabel("Number on Clicks: 0");
         
         
         panel.setBorder(BorderFactory.createEmptyBorder(30, 30, 10, 30));
