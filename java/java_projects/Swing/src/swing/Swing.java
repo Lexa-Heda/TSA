@@ -40,7 +40,7 @@ public class Swing extends JFrame implements ActionListener{
         label = new JLabel("Number on Clicks: 0");
         
         
-        panel.setBorder(BorderFactory.createEmptyBorder(30, 30, 10, 30));
+        panel.setBorder(BorderFactory.createEmptyBorder(100, 300, 100, 300));
         panel.setLayout(new GridLayout(0, 1));
         panel.add(button);
         panel.add(label);
