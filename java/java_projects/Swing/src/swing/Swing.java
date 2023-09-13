@@ -4,6 +4,8 @@
  */
 package swing;
 import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -29,19 +31,23 @@ public class Swing extends JFrame implements ActionListener{
     
     public static void GUI(){
         frame = new JFrame();
-        
+        frame.setSize(800, 600);
         
         panel = new JPanel();
+        panel.setSize(300, 200);
         
         button = new JButton("Click me");
         Swing Listener = new Swing();
         button.addActionListener(Listener);
         
         label = new JLabel("Number on Clicks: 0");
+        label.setPreferredSize(new Dimension(200, 40));
+        label.setOpaque(true);
+        label.setBackground(Color.red);
         
         
-        panel.setBorder(BorderFactory.createEmptyBorder(100, 300, 100, 300));
-        panel.setLayout(new GridLayout(0, 1));
+        panel.setBorder(BorderFactory.createEmptyBorder(400, 300, 400, 300));
+        panel.setLayout(new GridLayout(2, 0));
         panel.add(button);
         panel.add(label);
         
