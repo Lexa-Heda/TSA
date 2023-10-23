@@ -3,12 +3,23 @@ import os
 
 class App:
     def __init__(self):
-        self.vocabeln = []
-        self.vocabeln_franz = []
+        self.active = True
 
-        self.themen_fragen = {
+        self.vocabeln = ["hallo", "Ich wohne in..."]
+        self.vocabeln_franz = ["Bonjour", "J'habite a..."]
 
-        }
+        self.themen_fragen = [
+            [], # Mathe
+            [], # Geschichte
+            [] # Chemie
+        ]
+    def run(self):
+        while self.active:
+            print("____________________________________________________\n"
+                  "Das ist ein Lernprogramm!"
+                  "")
+
+
 
 
 
