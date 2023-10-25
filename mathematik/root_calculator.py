@@ -29,6 +29,7 @@ class Main_class():
         colorama.init()
 
         self.stellen = 64
+        self.run = True
 
         mp.dps = 64
         # Die Quadratzahl der Wurzel
@@ -105,7 +106,8 @@ class Main_class():
                     self.babylon()
             self.root_number = self.s_a
             self.statistic()
-
+        else:
+            self.run = False
     def main_funct(self):
         if self.radicant < 0:
             self.root_number = None
@@ -114,7 +116,7 @@ class Main_class():
         self.start_funct()
 
     def intervall(self):
-        while True:
+        while self.run:
             if self.i * self.i < self.radicant:
                 self.small_num = mp.mpf(self.i)
                 self.i += self.size
@@ -138,8 +140,8 @@ class Main_class():
         if self.root_number > 0:
             print(f"{Fore.GREEN}Your root number is {Fore.LIGHTGREEN_EX}{self.root_number}{Fore.GREEN}{Style.RESET_ALL}")
             #print(f"{Fore.GREEN}Your root number is {Fore.LIGHTGREEN_EX}-{self.root_number}{Fore.GREEN}.{Style.RESET_ALL}")
-        else:
-            print(f"{Fore.GREEN}Your root number is {Fore.LIGHTGREEN_EX}{self.root_number}{Fore.GREEN}{Style.RESET_ALL}")
+        
+        print(f"{Fore.GREEN}Your root number is {Fore.LIGHTGREEN_EX}{self.root_number}{Fore.GREEN}{Style.RESET_ALL}")
         print(f"Process ended succesfully\nNeeded Time: {self.end_zeit} s\n\n")
         self.main_funct()
 
